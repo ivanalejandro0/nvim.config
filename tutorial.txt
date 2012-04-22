@@ -1,3 +1,5 @@
+# Instructions to create a repo like this
+
 mkdir -p ~/.vim/{autoload,bundle}
 
 # organize all vim files in .vim/
@@ -8,19 +10,34 @@ cd ~/.vim
 
 git init
 
+# the awesome plugin manager "pathogen"
 # git submodule add https://github.com/tpope/vim-pathogen.git .  # it contains autoload/pathogen.vim
 # must copy by hand
 
+# add some plugins :)
 git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 git submodule add https://github.com/scrooloose/syntastic.git bundle/syntastic
 git submodule add https://github.com/majutsushi/tagbar.git bundle/tagbar
 git submodule add https://github.com/tomtom/tcomment_vim.git bundle/tcomment
 git submodule add https://github.com/mattn/zencoding-vim.git bundle/zencoding
 
-# add by hand tasklist, no git repo
+# i've added tasklist by hand, no git repo
 
 git submodule init
 git submodule update
 git submodule foreach git submodule init
 git submodule foreach git submodule update
 
+# How to use in other machines
+cd ~
+git clone git@bitbucket.org:ivanalejandro0/vim-configs.git  # or git clone https://ivanalejandro0@bitbucket.org/ivanalejandro0/vim-configs.git
+mv vim-configs .vim
+ln -s .vim/dot.vimrc .vimrc
+cd .vim
+git submodule init
+git submodule update
+
+
+# Thanks to:
+# http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+# http://sontek.net/turning-vim-into-a-modern-python-ide
