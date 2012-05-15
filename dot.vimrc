@@ -9,7 +9,7 @@
 
 " General {
     set backspace=indent,eol,start  " backspace through everything in insert mode
-    set autochdir " always switch to the current file directory
+    " set autochdir " always switch to the current file directory
     set backup " make backup files
     set backupdir=~/.vim/backup " where to put backup files
     set directory=~/.vim/tmp " directory to place swap files in
@@ -37,7 +37,7 @@
     set incsearch  " incremental search (search as you type)
     set nohlsearch   " highlighted search results
     set number  " show line numbers
-    set cursorcolumn " highlight the current column
+    " set cursorcolumn " highlight the current column
     set cursorline " highlight current line
 
 " Plugin settings {
@@ -71,6 +71,11 @@
         au BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.php,*.inc set shiftwidth=2 
         au BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.php,*.inc set softtabstop=2 
     " }
+" }
+
+" Command abbreviations {
+    " save a file you edited in vim asking sudo permission.
+    ca w!! w !sudo tee % >/dev/null
 " }
 
 " Folding {
