@@ -5,4 +5,5 @@ https://github.com/tomtom/tcomment_vim
 http://juan.boxfi.com/vim-plugins/#tasklist
 https://github.com/scrooloose/syntastic
 http://majutsushi.github.com/tagbar/
+https://github.com/tpope/vim-surround
 
