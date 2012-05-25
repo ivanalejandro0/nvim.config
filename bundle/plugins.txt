@@ -1,0 +1,8 @@
+https://github.com/tpope/vim-pathogen
+https://github.com/scrooloose/nerdtree
+https://github.com/mattn/zencoding-vim
+https://github.com/tomtom/tcomment_vim
+http://juan.boxfi.com/vim-plugins/#tasklist
+https://github.com/scrooloose/syntastic
+http://majutsushi.github.com/tagbar/
+

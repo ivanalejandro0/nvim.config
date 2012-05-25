@@ -1,4 +1,5 @@
 # Instructions to create a repo like this
+# Git repository with subrepositories belonging to creators of modules
 
 mkdir -p ~/.vim/{autoload,bundle}
 
