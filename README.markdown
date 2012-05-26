@@ -24,3 +24,4 @@ Extended match plugin: [Matchit](http://www.vim.org/scripts/script.php?script_id
 
 Non intrusive autocomplete popup: [Autocomplpop](https://bitbucket.org/ns9tks/vim-autocomplpop/)
 
+Snippets: [UltiSnips](https://github.com/SirVer/ultisnips)
