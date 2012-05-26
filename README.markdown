@@ -2,7 +2,7 @@
 
 Plugin manager: [Pathogen](https://github.com/tpope/vim-pathogen)
 
-Tree file eploreri: [NERDTree](https://github.com/scrooloose/nerdtree)
+Tree file eplorer: [NERDTree](https://github.com/scrooloose/nerdtree)
 
 Magical way to code html: [ZenCoding](https://github.com/mattn/zencoding-vim)
 
