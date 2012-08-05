@@ -4,7 +4,11 @@
     filetype plugin indent on " load filetype plugins/indent settings
     syntax on " syntax highlighting on
     setlocal spelllang=es " en
-    colorscheme delek
+    " Scrolling {
+        set scrolloff=3  " Start scrolling when we're 3 lines away from margins
+        set sidescrolloff=15
+        set sidescroll=1
+    " }
 " }
 
 " General {
@@ -134,15 +138,17 @@
     set foldlevel=1         " this is just what i use
 " }
 
-" use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|screen-256'
-    let &t_Co = 256
-    colorscheme fisa
-else
-    colorscheme delek
-endif
+" Color schemes {
+    " use 256 colors when possible
+    if &term =~? 'mlterm\|xterm\|screen-256'
+        let &t_Co = 256
+        colorscheme fisa
+    else
+        colorscheme delek
+    endif
 
-" colors for gvim
-if has('gui_running')
-    colorscheme wombat
-endif
+    " colors for gvim
+    if has('gui_running')
+        colorscheme wombat
+    endif
+" }
