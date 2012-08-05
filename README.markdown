@@ -27,3 +27,7 @@ Non intrusive autocomplete popup: [Autocomplpop](https://bitbucket.org/ns9tks/vi
 Snippets: [UltiSnips](https://github.com/SirVer/ultisnips)
 
 Color match html/xml tags: [MatchTag](https://github.com/gregsexton/MatchTag)
+
+Colorscheme for gvim [Wombat](http://www.vim.org/scripts/script.php?script_id=1778)
+
+Colorscheme for vim [fisa](https://github.com/fisadev/fisa-vim-colorscheme)

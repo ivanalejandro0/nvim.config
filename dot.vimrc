@@ -87,3 +87,16 @@
     set nofoldenable        " dont fold by default
     set foldlevel=1         " this is just what i use
 " }
+
+" use 256 colors when possible
+if &term =~? 'mlterm\|xterm\|screen-256'
+    let &t_Co = 256
+    colorscheme fisa
+else
+    colorscheme delek
+endif
+
+" colors for gvim
+if has('gui_running')
+    colorscheme wombat
+endif
