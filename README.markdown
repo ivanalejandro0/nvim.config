@@ -16,9 +16,7 @@ Class browser: [TagBar](http://majutsushi.github.com/tagbar/)
 
 Surrounding text util: [Surround](https://github.com/tpope/vim-surround)
 
-Partial pattern explore: [FuzzyFinder](https://bitbucket.org/ns9tks/vim-fuzzyfinder/)
-
-FuzzyFinder dependency: [l9](https://bitbucket.org/ns9tks/vim-l9/)
+Partial pattern explore: [CtrlP](https://github.com/kien/ctrlp.vim)
 
 Extended match plugin: [Matchit](http://www.vim.org/scripts/script.php?script_id=39)
 
