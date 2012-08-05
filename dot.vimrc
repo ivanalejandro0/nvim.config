@@ -78,10 +78,8 @@
         call feedkeys(a:search_text)
     endfunction
     " CtrlP with default text
-    nmap ,wg :call CtrlPWithSearchText(expand('<cword>'),
-    'BufTag')<CR>
-    nmap ,wf :call CtrlPWithSearchText(expand('<cword>'),
-    'Line')<CR>
+    nmap ,wg :call CtrlPWithSearchText(expand('<cword>'), 'BufTag')<CR>
+    nmap ,wf :call CtrlPWithSearchText(expand('<cword>'), 'Line')<CR>
     nmap ,d ,wg
     nmap ,we :call CtrlPWithSearchText(expand('<cword>'), '')<CR>
     nmap ,pe :call CtrlPWithSearchText(expand('<cfile>'), '')<CR>
