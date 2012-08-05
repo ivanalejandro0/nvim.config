@@ -33,12 +33,29 @@
 " }
 
 " Vim UI {
-    set laststatus=2 " always show the status line
+    " Status line { (from https://github.com/swaroopch/dotvim/blob/master/vimrc)
+        set laststatus=2 " always show the status line
+        set statusline=
+        set statusline+=%-3.3n\ " buffer number
+        set statusline+=%f\ " filename
+        set statusline+=%h%m%r%w " status flags
+        if isdirectory(expand("~/.vim/bundle/vim-fugitive", ":p"))
+            set statusline+=%{fugitive#statusline()} " git status
+        endif
+        if isdirectory(expand("~/.vim/bundle/syntastic", ":p"))
+            set statusline+=%{SyntasticStatuslineFlag()} " syntastic status - makes sense with :Errors
+        endif
+        set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+        set statusline+=%= " right align remainder
+        set statusline+=0x%-8B " character value
+        set statusline+=%-14(%l,%c%V%) " line, character
+        set statusline+=%<%P " file position
+    " }
     set incsearch  " incremental search (search as you type)
     set nohlsearch   " highlighted search results
     set number  " show line numbers
-    " set cursorcolumn " highlight the current column
     set cursorline " highlight current line
+" }
 
 " Plugin settings {
     " start the plugin manager
