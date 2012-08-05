@@ -63,6 +63,9 @@
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
     map <C-n> :tabnew 
+    imap <C-l> <ESC>:tabn<CR>
+    imap <C-h> <ESC>:tabp<CR>
+    imap <C-n> <ESC>:tabnew 
 " }
 
 " Autocommands {
