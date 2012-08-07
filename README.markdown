@@ -30,4 +30,4 @@ Colorscheme for gvim [Wombat](http://www.vim.org/scripts/script.php?script_id=17
 
 Colorscheme for vim [fisa](https://github.com/fisadev/fisa-vim-colorscheme)
 
-Javascript indentation improvement [web-indent](http://www.vim.org/scripts/script.php?script_id=3081)
+Javascript improvements [vim-javascript](https://github.com/pangloss/vim-javascript)
