@@ -77,6 +77,9 @@
     " NERDTree (better file browser) toggle
     map <F3> :NERDTreeToggle<CR>
 
+    " Close the NERD Tree with Shift-F3
+    nmap <S-F3> :NERDTreeClose<CR>
+
     " toggle Tagbar display
     map <F4> :TagbarToggle<CR>
 
