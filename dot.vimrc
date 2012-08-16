@@ -88,6 +88,10 @@
     imap <C-h> <ESC>:tabp<CR>
     imap <C-n> <ESC>:tabnew 
 
+    " Make horizontal scrolling easier
+    nmap <silent> <C-o> 10zl
+    nmap <silent> <C-i> 10zh
+
     " Navigate windows with meta+arrows
     map <M-Right> <c-w>l
     map <M-Left> <c-w>h
