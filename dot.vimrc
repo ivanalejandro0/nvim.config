@@ -83,6 +83,9 @@
     " toggle Tagbar display
     map <F4> :TagbarToggle<CR>
 
+    " toggle search highlighting
+    nnoremap <silent> <F11> :set hlsearch!<CR>
+
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
