@@ -83,6 +83,9 @@
     " toggle Tagbar display
     map <F4> :TagbarToggle<CR>
 
+    " toggle search highlighting
+    nnoremap <silent> <F11> :set hlsearch!<CR>
+
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
@@ -92,8 +95,9 @@
     imap <C-n> <ESC>:tabnew 
 
     " Make horizontal scrolling easier
-    nmap <silent> <C-o> 10zl
-    nmap <silent> <C-i> 10zh
+    " Disabled because C-i and C-o are used for the vim's jumplist
+    " nmap <silent> <C-o> 10zl
+    " nmap <silent> <C-i> 10zh
 
     " Navigate windows with meta+arrows
     map <M-Right> <c-w>l
