@@ -53,6 +53,17 @@ function! s:Unique(list)
     return l
 endfunction
 
+" convenience function to determine the 'null device' parameter
+" based on the current operating system
+function! syntastic#c#GetNullDevice()
+    if has('win32')
+        return '-o nul'
+    elseif has('unix') || has('mac')
+        return '-o /dev/null'
+    endif
+    return ''
+endfunction
+
 " get the gcc include directory argument depending on the default
 " includes and the optional user-defined 'g:syntastic_c_include_dirs'
 function! syntastic#c#GetIncludeDirs(filetype)
@@ -128,7 +139,7 @@ function! syntastic#c#SearchHeaders()
     " search included headers
     for hfile in files
         if hfile != ''
-            let filename = expand('%:p:h') . ((has('win32') || has('win64')) ?
+            let filename = expand('%:p:h') . (has('win32') ?
                         \ '\' : '/') . hfile
             try
                 let lines = readfile(filename, '', 100)
