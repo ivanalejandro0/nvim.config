@@ -127,18 +127,6 @@
     nmap ,pe :call CtrlPWithSearchText(expand('<cfile>'), '')<CR>
     " Don't change working directory
     let g:ctrlp_working_path_mode = 0
-
-    " Autoclosing {
-        " autoclose (
-        inoremap        (  ()<Left>
-        inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-        " autoclose [
-        inoremap        [  []<Left>
-        inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-        " autoclose {
-        inoremap        {  {}<Left>
-        inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-     " }
 " }
 
 " Autocommands {
