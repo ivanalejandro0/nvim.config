@@ -11,8 +11,10 @@ Code commenter: [tComment](https://github.com/tomtom/tcomment_vim)
 Todo manager: [TaskList](http://juan.boxfi.com/vim-plugins/#tasklist)
 
 Syntax checker: [Syntastic](https://github.com/scrooloose/syntastic)
+    requires: flake8 (pip install flake8) 
 
 Class browser: [TagBar](http://majutsushi.github.com/tagbar/)
+    requires: exuberant-ctags
 
 Surrounding text util: [Surround](https://github.com/tpope/vim-surround)
 
