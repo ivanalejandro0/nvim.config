@@ -68,6 +68,9 @@
 
     " autofocus on Tagbar open
     let g:tagbar_autofocus = 1
+
+    " Ignore files on NERDTree
+    let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " }
 
 " Mappings {
@@ -89,10 +92,11 @@
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
-    map <C-n> :tabnew 
+    " map <C-n> :tabnew 
+    map tt :tabnew 
     imap <C-l> <ESC>:tabn<CR>
     imap <C-h> <ESC>:tabp<CR>
-    imap <C-n> <ESC>:tabnew 
+    " imap <C-n> <ESC>:tabnew 
 
     " Make horizontal scrolling easier
     " Disabled because C-i and C-o are used for the vim's jumplist
@@ -127,9 +131,17 @@
     nmap ,pe :call CtrlPWithSearchText(expand('<cfile>'), '')<CR>
     " Don't change working directory
     let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_custom_ignore = {
+      \ 'dir': '\v[\/](\.git|\.hg|\.svn)$',
+      \ 'file': '\.pyc$\|\.pyo$',
+      \ }
 " }
 
-" Autocommands {
+" Autocommands { 
+    " automatically close autocompletion window
+    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
     " Web devel {
         " less indent for web formats
         au BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.php,*.inc set shiftwidth=2 
@@ -163,3 +175,4 @@
         colorscheme wombat
     endif
 " }
+
