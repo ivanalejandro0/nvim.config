@@ -113,6 +113,9 @@
     imap <M-Up> <ESC><c-w>k
     imap <M-Down> <ESC><c-w>j
 
+    " js-beautify mappings
+    vmap gb :!~/.vim/bundle/jsbeautifier/js-beautify.py/js-beautify -i<CR>
+
     " CtrlP (new fuzzy finder)
     let g:ctrlp_map = ',e'
     nmap ,g :CtrlPBufTag<CR>
