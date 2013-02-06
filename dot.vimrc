@@ -137,6 +137,8 @@
       \ 'dir': '\v[\/](\.git|\.hg|\.svn)$',
       \ 'file': '\.pyc$\|\.pyo$',
       \ }
+    " Fix to let ESC work as espected with Autoclose plugin
+    let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 " }
 
 " Autocommands { 
