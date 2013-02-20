@@ -89,6 +89,9 @@
     " toggle search highlighting
     nnoremap <silent> <F11> :set hlsearch!<CR>
 
+    " toggle line wrap
+    nnoremap <silent> <S-F11> :set wrap!<CR>
+
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
