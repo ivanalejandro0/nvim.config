@@ -32,6 +32,7 @@
                       "should a tab be (see expandtab)
     set tabstop=8 " real tabs should be 8, and they will show with
                   " set list on
+    set list listchars=tab:>-,trail:·,eol:$ " format for non-printable characters
     " set ignorecase " case insensitive by default
     " set smartcase " if there are caps, go case-sensitive
 " }
@@ -91,6 +92,9 @@
 
     " toggle line wrap
     nnoremap <silent> <S-F11> :set wrap!<CR>
+
+    " toggle list non-printable characters
+    nmap <silent> <leader>s :set nolist!<CR>
 
     " Working with tabs
     map <C-l> :tabn<CR>
