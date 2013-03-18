@@ -94,7 +94,7 @@
     nnoremap <silent> <S-F11> :set wrap!<CR>
 
     " toggle list non-printable characters
-    nmap <silent> <leader>s :set nolist!<CR>
+    nmap <silent> <leader>l :set nolist!<CR>
 
     " Working with tabs
     map <C-l> :tabn<CR>
