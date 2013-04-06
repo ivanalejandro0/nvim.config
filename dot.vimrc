@@ -158,6 +158,15 @@
         au BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.php,*.inc set shiftwidth=2 
         au BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.php,*.inc set softtabstop=2 
     " }
+
+    " Sparkup for other filetypes
+    " thanks to: https://github.com/rstacruz/sparkup/issues/33#issuecomment-3135285
+    augroup sparkup_types
+        " Remove ALL autocommands of the current group.
+        autocmd!
+        " Add sparkup to new filetypes
+        autocmd FileType mustache,php,htmldjango runtime! ftplugin/html/sparkup.vim
+    augroup END
 " }
 
 " Command abbreviations {
