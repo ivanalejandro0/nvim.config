@@ -149,6 +149,11 @@
       \ 'dir': '\v[\/](\.git|\.hg|\.svn)$',
       \ 'file': '\.pyc$\|\.pyo$',
       \ }
+
+    " autocompletion of files and commands behaves like shell
+    " (complete only the common part, list the options that match)
+    set wildmode=list:longest
+
     " Fix to let ESC work as espected with Autoclose plugin
     let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 " }
@@ -179,7 +184,7 @@
 
 " Color schemes {
     " use 256 colors when possible
-    if &term =~? 'mlterm\|xterm\|screen-256'
+    if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
         let &t_Co = 256
         colorscheme fisa
     else
