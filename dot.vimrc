@@ -98,6 +98,8 @@
 
     " toggle yank ring
     nnoremap <silent> <leader>y :YRShow<CR>
+    " avoid yankring to redefine my C-n
+    let g:yankring_replace_n_nkey = ''
 
     " Working with tabs
     map <C-l> :tabn<CR>
