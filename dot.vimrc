@@ -96,6 +96,9 @@
     " toggle list non-printable characters
     nmap <silent> <leader>l :set nolist!<CR>
 
+    " toggle yank ring
+    nnoremap <silent> <leader>y :YRShow<CR>
+
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
