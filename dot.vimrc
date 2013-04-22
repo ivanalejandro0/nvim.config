@@ -101,6 +101,9 @@
     " avoid yankring to redefine my C-n
     let g:yankring_replace_n_nkey = ''
 
+    " send yankring history file to tmp
+    let g:yankring_history_dir = '~/.vim/tmp/'
+
     " Working with tabs
     map <C-l> :tabn<CR>
     map <C-h> :tabp<CR>
