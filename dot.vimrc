@@ -132,6 +132,7 @@
 
     " CtrlP (new fuzzy finder)
     let g:ctrlp_map = ',e'
+    nmap ,b :CtrlPBuffer<CR>
     nmap ,g :CtrlPBufTag<CR>
     nmap ,f :CtrlPLine<CR>
     nmap ,m :CtrlPMRUFiles<CR>
