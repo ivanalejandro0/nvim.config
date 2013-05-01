@@ -91,7 +91,7 @@
     nnoremap <silent> <F11> :set hlsearch!<CR>
 
     " toggle line wrap
-    nnoremap <silent> <S-F11> :set wrap!<CR>
+    nnoremap <silent> <leader>w :set wrap!<CR>
 
     " toggle list non-printable characters
     nmap <silent> <leader>l :set nolist!<CR>
