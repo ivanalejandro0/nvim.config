@@ -27,7 +27,8 @@
     set list listchars=tab:>-,trail:·,eol:$ " format for non-printable characters
 
     " Search
-    set smartcase  " if there are caps, go case-sensitive
+    set ignorecase " Ignore case when searching...
+    set smartcase  " ...unless we type a capital             "
     set incsearch  " incremental search (search as you type)
     set nohlsearch " don't highlight search results
 " }
