@@ -88,13 +88,13 @@
     map <F4> :TagbarToggle<CR>
 
     " toggle search highlighting
-    nnoremap <silent> <F11> :set hlsearch!<CR>
+    nnoremap <silent> <F11> :set hlsearch! hlsearch?<CR>
 
     " toggle line wrap
-    nnoremap <silent> <leader>w :set wrap!<CR>
+    nnoremap <silent> <leader>w :set wrap! wrap?<CR>
 
     " toggle list non-printable characters
-    nmap <silent> <leader>l :set nolist!<CR>
+    nmap <silent> <leader>l :set list! list?<CR>
 
     " toggle yank ring
     nnoremap <silent> <leader>y :YRShow<CR>
