@@ -28,14 +28,16 @@ Snippets: [UltiSnips](https://github.com/SirVer/ultisnips)
 
 Color match html/xml tags: [MatchTag](https://github.com/gregsexton/MatchTag)
 
-Colorscheme for gvim [Wombat](http://www.vim.org/scripts/script.php?script_id=1778)
+Colorscheme for gvim: [Wombat](http://www.vim.org/scripts/script.php?script_id=1778)
 
-Colorscheme for vim [fisa](https://github.com/fisadev/fisa-vim-colorscheme)
+Colorscheme for vim: [fisa](https://github.com/fisadev/fisa-vim-colorscheme)
 
-Javascript improvements [vim-javascript](https://github.com/pangloss/vim-javascript)
+Javascript improvements: [vim-javascript](https://github.com/pangloss/vim-javascript)
 
-AutoClose feature [vim-autoclose](https://github.com/Townk/vim-autoclose)
+AutoClose feature: [vim-autoclose](https://github.com/Townk/vim-autoclose)
 
-Copy history navigation [yankring](http://www.vim.org/scripts/script.php?script_id=1234)
+Copy history navigation: [yankring](http://www.vim.org/scripts/script.php?script_id=1234)
 
-Beautiful status line [vim-powerline](https://github.com/Lokaltog/vim-powerline)
+Beautiful status line: [vim-powerline](https://github.com/Lokaltog/vim-powerline)
+
+Tabular, the text aligner: [tabular](https://github.com/godlygeek/tabular)
