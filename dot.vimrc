@@ -20,6 +20,9 @@
 
     set number     " show line numbers
     set cursorline " highlight current line
+
+    " timeout settings to avoid delay switching modes
+    set timeoutlen=1000 ttimeoutlen=0
 " }
 
 " Text Formatting/Layout {
