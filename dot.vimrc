@@ -14,9 +14,9 @@
 
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
-    set backup                  " make backup files
-    set backupdir=~/.vim/backup " where to put backup files
-    set directory=~/.vim/tmp    " directory to place swap files in
+    set backup                   " make backup files
+    set backupdir=~/.vim/backups " where to put backup files
+    set directory=~/.vim/tmp     " directory to place swap files in
 
     set number     " show line numbers
     set cursorline " highlight current line
