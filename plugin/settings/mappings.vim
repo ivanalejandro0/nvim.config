@@ -7,6 +7,9 @@ nnoremap <silent> <leader>w :set wrap! wrap?<CR>
 " toggle list non-printable characters
 nnoremap <silent> <leader>l :set list! list?<CR>
 
+" Toggle "keep current line in the center of the screen" mode
+nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
+
 " Working with tabs
 noremap  <C-l> :tabn<CR>
 noremap  <C-h> :tabp<CR>
