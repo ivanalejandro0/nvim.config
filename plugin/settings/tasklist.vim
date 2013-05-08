@@ -1,2 +1,2 @@
 " Show pending task lint
-map <F2> :TaskList<CR>
+map <F2> <Plug>TaskList
