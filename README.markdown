@@ -34,7 +34,7 @@ Colorscheme for vim: [fisa](https://github.com/fisadev/fisa-vim-colorscheme)
 
 Javascript improvements: [vim-javascript](https://github.com/pangloss/vim-javascript)
 
-AutoClose feature: [vim-autoclose](https://github.com/Townk/vim-autoclose)
+Autoclose feature: [delimitMate](https://github.com/Raimondi/delimitMate)
 
 Copy history navigation: [yankring](http://www.vim.org/scripts/script.php?script_id=1234)
 
