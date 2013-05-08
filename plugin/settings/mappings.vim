@@ -14,6 +14,10 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 " Great for pasting Python lines into REPLs.
 nnoremap vv ^vg_
 
+" toggle paste mode
+nnoremap <silent> <leader>p :set paste! paste?<CR>
+
+
 " Working with tabs
 noremap  <C-l> :tabn<CR>
 noremap  <C-h> :tabp<CR>
