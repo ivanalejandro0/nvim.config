@@ -41,3 +41,5 @@ Copy history navigation: [yankring](http://www.vim.org/scripts/script.php?script
 Beautiful status line: [vim-powerline](https://github.com/Lokaltog/vim-powerline)
 
 Tabular, the text aligner: [tabular](https://github.com/godlygeek/tabular)
+
+Repeating support for plugins: [vim-repeat](https://github.com/tpope/vim-repeat)
