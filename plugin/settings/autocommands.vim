@@ -6,3 +6,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 autocmd FileType html       setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" filetype selection
+au BufRead,BufNewFile *.mustache set filetype=html
