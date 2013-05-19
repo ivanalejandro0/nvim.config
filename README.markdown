@@ -44,4 +44,6 @@ Tabular, the text aligner: [tabular](https://github.com/godlygeek/tabular)
 
 Repeating support for plugins: [vim-repeat](https://github.com/tpope/vim-repeat)
 
-Indent Object: [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
+Indent Text Object: [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
+
+Filetype extension for CtrlP: [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
