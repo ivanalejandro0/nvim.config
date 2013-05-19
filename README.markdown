@@ -43,3 +43,5 @@ Beautiful status line: [vim-powerline](https://github.com/Lokaltog/vim-powerline
 Tabular, the text aligner: [tabular](https://github.com/godlygeek/tabular)
 
 Repeating support for plugins: [vim-repeat](https://github.com/tpope/vim-repeat)
+
+Indent Object: [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
