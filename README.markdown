@@ -47,3 +47,5 @@ Repeating support for plugins: [vim-repeat](https://github.com/tpope/vim-repeat)
 Indent Text Object: [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
 
 Filetype extension for CtrlP: [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
+
+Terminal Keys settings: [terminalkeys.vim](https://github.com/nacitar/terminalkeys.vim.git)
