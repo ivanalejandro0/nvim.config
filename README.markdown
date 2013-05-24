@@ -49,3 +49,5 @@ Indent Text Object: [vim-indent-object](https://github.com/michaeljsmith/vim-ind
 Filetype extension for CtrlP: [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
 
 Terminal Keys settings: [terminalkeys.vim](https://github.com/nacitar/terminalkeys.vim.git)
+
+Interaction with tmux/screen: [vim-slime](https://github.com/jpalardy/vim-slime)
