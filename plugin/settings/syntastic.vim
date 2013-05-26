@@ -2,4 +2,3 @@
 if isdirectory(expand("~/.vim/bundle/syntastic", ":p"))
     set statusline+=%{SyntasticStatuslineFlag()}
 endif
-
