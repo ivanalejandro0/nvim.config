@@ -51,3 +51,5 @@ Filetype extension for CtrlP: [ctrlp-filetype](https://github.com/endel/ctrlp-fi
 Terminal Keys settings: [terminalkeys.vim](https://github.com/nacitar/terminalkeys.vim.git)
 
 Interaction with tmux/screen: [vim-slime](https://github.com/jpalardy/vim-slime)
+
+Virtualenv support: [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv.git)
