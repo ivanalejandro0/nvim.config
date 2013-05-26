@@ -53,3 +53,5 @@ Terminal Keys settings: [terminalkeys.vim](https://github.com/nacitar/terminalke
 Interaction with tmux/screen: [vim-slime](https://github.com/jpalardy/vim-slime)
 
 Virtualenv support: [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv.git)
+
+Graph vim undo history: [gundo](https://github.com/sjl/gundo.vim.git)
