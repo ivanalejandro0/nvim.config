@@ -14,9 +14,12 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 " Great for pasting Python lines into REPLs.
 nnoremap vv ^vg_
 
+" keep the original selection in visual mode while indent/outdent
+vnoremap > >gv
+vnoremap < <gv
+
 " toggle paste mode
 nnoremap <silent> <leader>p :set paste! paste?<CR>
-
 
 " Working with tabs
 noremap  <C-l> :tabn<CR>
@@ -24,7 +27,7 @@ noremap  <C-h> :tabp<CR>
 inoremap <C-l> <ESC>:tabn<CR>
 inoremap <C-h> <ESC>:tabp<CR>
 nnoremap <C-n> :tabnew 
-" imap <C-n> <ESC>:tabnew 
+" imap <C-n> <ESC>:tabnew
 
 " Navigate windows with meta+arrows
 noremap  <M-Right> <c-w>l
