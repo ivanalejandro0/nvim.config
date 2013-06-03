@@ -59,3 +59,6 @@ Graph vim undo history: [gundo](https://github.com/sjl/gundo.vim.git)
 Toggle window zoom: [ZoomWin](http://www.drchip.org/astronaut/vim/index.html#ZOOMWIN)
 
 Scratch buffer: [vim-scratch](https://github.com/ivanalejandro0/vim-scratch)
+
+Debugger: [vim-debug](https://github.com/jabapyth/vim-debug)
+    requires: vim-debug (pip install vim-debug)
