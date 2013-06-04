@@ -12,7 +12,7 @@ endif
 
 " set this to 0 to enable the automatic mappings
 " any other value will disable the mappings
-let g:vim_debug_disable_mappings = 0
+let g:vim_debug_disable_mappings = 1
 
 python << EOF
 import vim
