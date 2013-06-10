@@ -14,10 +14,6 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 " Great for pasting Python lines into REPLs.
 nnoremap vv ^vg_
 
-" keep the original selection in visual mode while indent/outdent
-vnoremap > >gv
-vnoremap < <gv
-
 " toggle paste mode
 nnoremap <silent> <leader>p :set paste! paste?<CR>
 
