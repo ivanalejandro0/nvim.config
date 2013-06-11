@@ -18,18 +18,18 @@ nnoremap vv ^vg_
 nnoremap <silent> <leader>p :set paste! paste?<CR>
 
 " Working with tabs
-noremap  <C-l> :tabn<CR>
-noremap  <C-h> :tabp<CR>
+nnoremap  <C-l> :tabn<CR>
+nnoremap  <C-h> :tabp<CR>
 inoremap <C-l> <ESC>:tabn<CR>
 inoremap <C-h> <ESC>:tabp<CR>
 nnoremap <C-n> :tabnew 
 " imap <C-n> <ESC>:tabnew
 
 " Navigate windows with meta+arrows
-noremap  <M-Right> <c-w>l
-noremap  <M-Left> <c-w>h
-noremap  <M-Up> <c-w>k
-noremap  <M-Down> <c-w>j
+nnoremap  <M-Right> <c-w>l
+nnoremap  <M-Left> <c-w>h
+nnoremap  <M-Up> <c-w>k
+nnoremap  <M-Down> <c-w>j
 inoremap <M-Right> <ESC><c-w>l
 inoremap <M-Left> <ESC><c-w>h
 inoremap <M-Up> <ESC><c-w>k
