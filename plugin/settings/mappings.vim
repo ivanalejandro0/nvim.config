@@ -34,8 +34,3 @@ inoremap <M-Right> <ESC><c-w>l
 inoremap <M-Left> <ESC><c-w>h
 inoremap <M-Up> <ESC><c-w>k
 inoremap <M-Down> <ESC><c-w>j
-
-" Make horizontal scrolling easier
-" Disabled because C-i and C-o are used for the vim's jumplist
-" nmap <silent> <C-o> 10zl
-" nmap <silent> <C-i> 10zh
