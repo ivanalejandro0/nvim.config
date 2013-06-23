@@ -7,13 +7,6 @@ nnoremap <silent> <leader>w :set wrap! wrap?<CR>
 " toggle list non-printable characters
 nnoremap <silent> <leader>l :set list! list?<CR>
 
-" Toggle "keep current line in the center of the screen" mode
-nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
-
-" Select (charwise) the contents of the current line, excluding indentation.
-" Great for pasting Python lines into REPLs.
-nnoremap vv ^vg_
-
 " toggle paste mode
 nnoremap <silent> <leader>p :set paste! paste?<CR>
 
