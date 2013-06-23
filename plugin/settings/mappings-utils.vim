@@ -9,7 +9,7 @@ ca w!! w !sudo tee % >/dev/null
 nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 
 " Formats the entire file.
-nnoremap <leader>F mFgg=G`F
+nnoremap <leader>F :normal! gg=G``<CR>
 
 " Underline the current line with '='
 nmap <silent> <leader>u :t.<CR>Vr=
