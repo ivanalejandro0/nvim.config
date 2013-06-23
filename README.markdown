@@ -64,3 +64,5 @@ Debugger: [vim-debug](https://github.com/jabapyth/vim-debug)
     requires: vim-debug and dbgp (pip install vim-debug dbgp)
 
 Python pep8 indent: [vim-python-pep8-indent](https://github.com/hynek/vim-python-pep8-indent)
+
+Easy interaction with tmux: [vimux](https://github.com/benmills/vimux)
