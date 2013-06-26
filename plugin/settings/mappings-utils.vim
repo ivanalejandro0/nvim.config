@@ -12,4 +12,7 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 nnoremap <leader>F :normal! gg=G``<CR>
 
 " Underline the current line with '='
-nmap <silent> <leader>u :t.<CR>Vr=
+nnoremap <silent> <leader>u :t.<CR>Vr=
+
+" Select all
+nnoremap <leader>a ggVG
