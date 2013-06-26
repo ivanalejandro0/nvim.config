@@ -16,3 +16,7 @@ nnoremap <silent> <leader>u :t.<CR>Vr=
 
 " Select all
 nnoremap <leader>a ggVG
+
+" Delete text
+nnoremap <leader>d "_dd
+vnoremap <leader>d "_d
