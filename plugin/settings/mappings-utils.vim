@@ -20,3 +20,10 @@ nnoremap <leader>a ggVG
 " Delete text
 nnoremap <leader>d "_dd
 vnoremap <leader>d "_d
+
+" Quicker buffer deletion
+nnoremap <leader>q :bd<CR>
+
+" Swap sides between '='. Customized from:
+" http://stackoverflow.com/questions/1374105/swap-text-around-equal-sign
+nnoremap <leader>= :s/\v(\s*)([^=]*)\s+\=\s+([^;]*)/\1\3 = \2<CR>
