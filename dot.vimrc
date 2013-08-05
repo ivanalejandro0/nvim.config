@@ -27,7 +27,7 @@
 
 " Text Formatting/Layout {
     set nowrap " do not wrap line
-    set list listchars=tab:>-,trail:·,eol:$ " format for non-printable characters
+    set list listchars=tab:>-,trail:· " format for non-printable characters
 
     " Search
     set ignorecase " Ignore case when searching...
