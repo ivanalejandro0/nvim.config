@@ -27,3 +27,15 @@ nnoremap <leader>q :bd<CR>
 " Swap sides between '='. Customized from:
 " http://stackoverflow.com/questions/1374105/swap-text-around-equal-sign
 nnoremap <leader>= :s/\v(\s*)([^=]*)\s+\=\s+([^;]*)/\1\3 = \2<CR>
+
+" Set color column marker at 80
+" credit: http://www.vimbits.com/bits/317
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+  else
+    setlocal colorcolumn=80
+  endif
+endfunction
+
+nnoremap <silent> co8 :call g:ToggleColorColumn()<CR>
