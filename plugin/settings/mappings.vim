@@ -1,14 +1,5 @@
-" toggle search highlighting
-nnoremap <silent> <F11> :set hlsearch! hlsearch?<CR>
-
-" toggle line wrap
-nnoremap <silent> <leader>w :set wrap! wrap?<CR>
-
-" toggle list non-printable characters
-nnoremap <silent> <leader>l :set list! list?<CR>
-
-" toggle paste mode
-nnoremap <silent> <leader>p :set paste! paste?<CR>
+" toggle paste mode (vim-unimpaired style)
+nnoremap <silent> cop :set paste! paste?<CR>
 
 " Working with tabs
 nnoremap  <C-l> :tabn<CR>
