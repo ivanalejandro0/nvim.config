@@ -13,6 +13,17 @@ You can install them as follows (``apt-get`` works in a debian based distro)::
     $ sudo pip install vim-debug dbgp
 
 
+Installation
+============
+
+You need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
+
+    $ cd
+    $ mv .vim .vim.old; mv .vimrc .vimrc.old  # in case that you have existing vim configurations
+    $ git clone https://github.com/ivanalejandro0/vim-configs.git .vim
+    $ ln -s .vim/dot.vimrc .vimrc
+
+
 Plugin list
 ===========
 
