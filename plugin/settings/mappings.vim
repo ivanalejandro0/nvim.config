@@ -1,5 +1,3 @@
-" toggle paste mode (vim-unimpaired style)
-nnoremap <silent> cop :set paste! paste?<CR>
 " move forward one character in insert mode
 " useful to skip characteres inserted by autoclose
 inoremap <C-f> <Right>

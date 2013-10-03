@@ -28,7 +28,7 @@ nnoremap <leader>q :bd<CR>
 " http://stackoverflow.com/questions/1374105/swap-text-around-equal-sign
 nnoremap <leader>= :s/\v(\s*)([^=]*)\s+\=\s+([^;]*)/\1\3 = \2<CR>
 
-" Set color column marker at 80
+" Toggle color column marker at 80
 " credit: http://www.vimbits.com/bits/317
 function! g:ToggleColorColumn()
   if &colorcolumn != ''
@@ -39,3 +39,6 @@ function! g:ToggleColorColumn()
 endfunction
 
 nnoremap <silent> co8 :call g:ToggleColorColumn()<CR>
+
+" toggle paste mode (vim-unimpaired style)
+nnoremap <silent> cop :set paste! paste?<CR>
