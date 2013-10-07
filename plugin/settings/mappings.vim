@@ -7,7 +7,7 @@ nnoremap  <C-l> :tabn<CR>
 nnoremap  <C-h> :tabp<CR>
 inoremap <C-l> <ESC>:tabn<CR>
 inoremap <C-h> <ESC>:tabp<CR>
-nnoremap <C-n> :tabnew
+nnoremap <C-n> :tabnew 
 " imap <C-n> <ESC>:tabnew
 
 " Navigate windows with meta+arrows
