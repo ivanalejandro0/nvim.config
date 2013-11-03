@@ -14,6 +14,14 @@
 
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
+    " Create backup and temp directories if they don't exist
+    if !isdirectory("~/.vim/backups")
+        call mkdir("~/.vim/backups", "p")
+    endif
+    if !isdirectory("~/.vim/tmp")
+        call mkdir("~/.vim/tmp", "p")
+    endif
+
     set backup                   " make backup files
     set backupdir=~/.vim/backups " where to put backup files
     set directory=~/.vim/tmp     " directory to place swap files in
