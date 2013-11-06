@@ -15,11 +15,11 @@
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
     " Create backup and temp directories if they don't exist
-    if !isdirectory("~/.vim/backups")
-        call mkdir("~/.vim/backups", "p")
+    if !isdirectory($HOME . "/.vim/backups")
+        call mkdir($HOME . "/.vim/backups", "p")
     endif
-    if !isdirectory("~/.vim/tmp")
-        call mkdir("~/.vim/tmp", "p")
+    if !isdirectory($HOME . "/.vim/tmp")
+        call mkdir($HOME . "/.vim/tmp", "p")
     endif
 
     set backup                   " make backup files
