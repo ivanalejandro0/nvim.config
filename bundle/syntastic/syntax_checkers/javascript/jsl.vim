@@ -17,7 +17,7 @@ if !exists("g:syntastic_javascript_jsl_conf")
     let g:syntastic_javascript_jsl_conf = ""
 endif
 
-function s:ConfFlag()
+function! s:ConfFlag()
     if !empty(g:syntastic_javascript_jsl_conf)
         return "-conf " . g:syntastic_javascript_jsl_conf
     endif
@@ -31,11 +31,23 @@ endfunction
 
 function! SyntaxCheckers_javascript_jsl_GetLocList()
     let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'jsl',
-                \ 'args': s:ConfFlag() . " -nologo -nofilelisting -nosummary -nocontext -process",
-                \ 'subchecker': 'jsl' })
-    let errorformat='%W%f(%l): lint warning: %m,%-Z%p^,%W%f(%l): warning: %m,%-Z%p^,%E%f(%l): SyntaxError: %m,%-Z%p^,%-G'
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+        \ 'exe': 'jsl',
+        \ 'args': s:ConfFlag() . " -nologo -nofilelisting -nosummary -nocontext -process",
+        \ 'filetype': 'javascript',
+        \ 'subchecker': 'jsl' })
+
+    let errorformat =
+        \ '%W%f(%l): lint warning: %m,'.
+        \ '%-Z%p^,'.
+        \ '%W%f(%l): warning: %m,'.
+        \ '%-Z%p^,'.
+        \ '%E%f(%l): SyntaxError: %m,'.
+        \ '%-Z%p^,'.
+        \ '%-G'
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

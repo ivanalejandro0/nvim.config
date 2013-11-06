@@ -10,31 +10,51 @@
 "
 "============================================================================
 
-if exists("g:loaded_syntastic_haskell_ghc_mod_checker")
+if exists('g:loaded_syntastic_haskell_ghc_mod_checker')
     finish
 endif
-let g:loaded_syntastic_haskell_ghc_mod_checker=1
+let g:loaded_syntastic_haskell_ghc_mod_checker = 1
 
-if !exists('g:syntastic_haskell_checker_args')
-    let g:syntastic_haskell_checker_args = '--hlintOpt="--language=XmlSyntax"'
-endif
+let s:ghc_mod_new = -1
 
 function! SyntaxCheckers_haskell_ghc_mod_IsAvailable()
-    return executable('ghc-mod')
+    " We need either a Vim version that can handle NULs in system() output,
+    " or a ghc-mod version that has the --boundary option.
+    let s:ghc_mod_new = executable('ghc-mod') ? s:GhcModNew() : -1
+    return (s:ghc_mod_new >= 0) && (v:version >= 704 || s:ghc_mod_new)
 endfunction
 
 function! SyntaxCheckers_haskell_ghc_mod_GetLocList()
-    let ghcmod = 'ghc-mod ' . g:syntastic_haskell_checker_args
-    let makeprg =
-          \ "{ ".
-          \ ghcmod . " check ". shellescape(expand('%')) . "; " .
-          \ ghcmod . " lint " . shellescape(expand('%')) . ";" .
-          \ " }"
-    let errorformat = '%-G\\s%#,%f:%l:%c:%trror: %m,%f:%l:%c:%tarning: %m,'.
-                \ '%f:%l:%c: %trror: %m,%f:%l:%c: %tarning: %m,%f:%l:%c:%m,'.
-                \ '%E%f:%l:%c:,%Z%m,'
+    let makeprg = syntastic#makeprg#build({
+        \ 'exe': 'ghc-mod check' . (s:ghc_mod_new ? ' --boundary=""' : ''),
+        \ 'filetype': 'haskell',
+        \ 'subchecker': 'ghc_mod' })
 
-    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+    let errorformat =
+        \ '%-G%\s%#,' .
+        \ '%f:%l:%c:%trror: %m,' .
+        \ '%f:%l:%c:%tarning: %m,'.
+        \ '%f:%l:%c: %trror: %m,' .
+        \ '%f:%l:%c: %tarning: %m,' .
+        \ '%f:%l:%c:%m,' .
+        \ '%E%f:%l:%c:,' .
+        \ '%Z%m'
+
+    return SyntasticMake({
+        \ 'makeprg': makeprg,
+        \ 'errorformat': errorformat,
+        \ 'postprocess': ['compressWhitespace'] })
+endfunction
+
+function! s:GhcModNew()
+    try
+        let ghc_mod_version = filter(split(system('ghc-mod'), '\n'), 'v:val =~# ''\m^ghc-mod version''')[0]
+        let ret = syntastic#util#versionIsAtLeast(syntastic#util#parseVersion(ghc_mod_version), [2, 1, 2])
+    catch /^Vim\%((\a\+)\)\=:E684/
+        call syntastic#util#error("checker haskell/ghc_mod: can't parse version string (abnormal termination?)")
+        let ret = -1
+    endtry
+    return ret
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({

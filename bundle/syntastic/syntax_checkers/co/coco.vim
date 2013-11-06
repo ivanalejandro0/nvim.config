@@ -19,16 +19,22 @@ if !executable("coco")
     finish
 endif
 
-function! SyntaxCheckers_co_coco_GetLocList()
+function! SyntaxCheckers_co_coco_IsAvailable()
     return executable('coco')
 endfunction
 
 function! SyntaxCheckers_co_coco_GetLocList()
     let makeprg = syntastic#makeprg#build({
-                \ 'exe': 'coco',
-                \ 'args': '-c -o /tmp',
-                \ 'subchecker': 'coco' })
-    let errorformat = '%EFailed at: %f,%ZSyntax%trror: %m on line %l,%EFailed at: %f,%Z%trror: Parse error on line %l: %m'
+        \ 'exe': 'coco',
+        \ 'args': '-c -o /tmp',
+        \ 'filetype': 'co',
+        \ 'subchecker': 'coco' })
+
+    let errorformat =
+        \ '%EFailed at: %f,' .
+        \ '%ZSyntax%trror: %m on line %l,'.
+        \ '%EFailed at: %f,'.
+        \ '%Z%trror: Parse error on line %l: %m'
 
     return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction
