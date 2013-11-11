@@ -25,6 +25,8 @@
     set backup                   " make backup files
     set backupdir=~/.vim/backups " where to put backup files
     set directory=~/.vim/tmp     " directory to place swap files in
+    set undofile                 " persistent undos - undo after you re-open the file
+    set undodir=~/.vim/backups
 
     set number     " show line numbers
     set cursorline " highlight current line
