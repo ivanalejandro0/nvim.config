@@ -14,19 +14,23 @@
 
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
-    " Create backup and temp directories if they don't exist
-    if !isdirectory($HOME . "/.vim/backups")
-        call mkdir($HOME . "/.vim/backups", "p")
-    endif
-    if !isdirectory($HOME . "/.vim/tmp")
-        call mkdir($HOME . "/.vim/tmp", "p")
-    endif
+    set directory=~/.vim/dirs/tmp     " directory to place swap files in
+    set backup                        " make backup files
+    set backupdir=~/.vim/dirs/backups " where to put backup files
+    set undofile                      " persistent undos - undo after you re-open the file
+    set undodir=~/.vim/dirs/undos
+    set viminfo+=n~/.vim/dirs/viminfo
 
-    set backup                   " make backup files
-    set backupdir=~/.vim/backups " where to put backup files
-    set directory=~/.vim/tmp     " directory to place swap files in
-    set undofile                 " persistent undos - undo after you re-open the file
-    set undodir=~/.vim/backups
+    " Create needed directories if they don't exist
+    if !isdirectory(&backupdir)
+        call mkdir(&backupdir, "p")
+    endif
+    if !isdirectory(&directory)
+        call mkdir(&directory, "p")
+    endif
+    if !isdirectory(&undodir)
+        call mkdir(&undodir, "p")
+    endif
 
     set number     " show line numbers
     set cursorline " highlight current line
