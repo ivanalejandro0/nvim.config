@@ -1,6 +1,9 @@
 vim-python-pep8-indent
 ======================
 
+.. image:: https://travis-ci.org/hynek/vim-python-pep8-indent.png?branch=travis
+   :target: https://travis-ci.org/hynek/vim-python-pep8-indent
+
 This small script modifies vim_’s indentation behavior to comply with PEP8_ and
 my aesthetic preferences: ::
 
@@ -38,9 +41,8 @@ The easiest way is to use pathogen_ and do a ::
 
 in your `~/.vim/bundle`. And you *should* use pathogen. Really.
 
-Please note that Kirill Klenov’s python-mode_ ships an own version of of this
-bundle.  Therefore, if you want to use this version specifically, you’ll have
-to disable python-mode’s using: ::
+Please note that Kirill Klenov’s python-mode_ ships an own version of this bundle.
+Therefore, if you want to use this version specifically, you’ll have to disable python-mode’s using: ::
 
    let g:pymode_indent = 0
 

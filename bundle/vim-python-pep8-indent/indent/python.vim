@@ -3,7 +3,6 @@
 " Maintainer:       Hynek Schlawack <hs@ox.cx>
 " Prev Maintainer:  Eric Mc Sween <em@tomcom.de> (address invalid)
 " Original Author:  David Bustos <bustos@caltech.edu> (address invalid)
-" Last Change:      2012-06-21
 " License:          Public Domain
 
 " Only load this indent file when no other was loaded.
@@ -15,7 +14,7 @@ let b:did_indent = 1
 setlocal expandtab
 setlocal nolisp
 setlocal autoindent
-setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentexpr=GetPythonPEPIndent(v:lnum)
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
 
 let s:maxoff = 50
@@ -101,7 +100,7 @@ function! s:BlockStarter(lnum, block_start_re)
     return -1
 endfunction
 
-function! GetPythonIndent(lnum)
+function! GetPythonPEPIndent(lnum)
 
     " First line has indent 0
     if a:lnum == 1
@@ -160,20 +159,28 @@ function! GetPythonIndent(lnum)
         return -1
     endif
 
-    " If this line is explicitly joined, try to find an indentation that looks
-    " good.
+    " If this line is explicitly joined, find the first indentation that is a
+    " multiple of four and will distinguish itself from next logical line.
     if pline =~ '\\$'
-        let compound_statement = '^\s*\(if\|while\|for\s.*\sin\|except\)\s*'
-        let maybe_indent = matchend(getline(sslnum), compound_statement)
-        if maybe_indent != -1
-            return maybe_indent
+        let maybe_indent = indent(sslnum) + &sw
+        let control_structure = '^\s*\(if\|while\|for\s.*\sin\|except\)\s*'
+        if match(getline(sslnum), control_structure) != -1
+            " add extra indent to avoid E125
+            return maybe_indent + &sw
         else
-            return indent(sslnum) + &sw * 2
+            " control structure not found
+            return maybe_indent
         endif
     endif
 
     " If the previous line ended with a colon and is not a comment, indent
     " relative to statement start.
+    let pline = substitute(pline, '\\\\', '', 'g')
+    if v:version > 703 || (v:version == 703 && has('patch1037'))
+        let pline = substitute(pline, '".\{-}\\\@1<!"\|''.\{-}\\\@1<!''', '', 'g')
+    else
+        let pline = substitute(pline, '".\{-}\\\@<!"\|''.\{-}\\\@<!''', '', 'g')
+    endif
     if pline =~ '^[^#]*:\s*\(#.*\)\?$'
         return indent(sslnum) + &sw
     endif
@@ -186,6 +193,13 @@ function! GetPythonIndent(lnum)
             return indent(sslnum) - &sw
         endif
         " Otherwise, trust the user
+        return -1
+    endif
+
+    " If this line is dedented and the number of indent spaces is valid
+    " (multiple of the indentation size), trust the user
+    let dedent_size = thisindent - indent(plnum)
+    if dedent_size < 0 && thisindent % &sw == 0
         return -1
     endif
 
