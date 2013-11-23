@@ -31,7 +31,7 @@ Plugin manager: `Pathogen <https://github.com/tpope/vim-pathogen>`_
 
 Tree file eplorer: `NERDTree <https://github.com/scrooloose/nerdtree>`_
 
-Magical way to code html: `ZenCoding <https://github.com/mattn/zencoding-vim>`_
+Magical way to code html: `Emmet <http://github.com/mattn/emmet-vim>`_
 
 Code commenter: `tComment <https://github.com/tomtom/tcomment_vim>`_
 
