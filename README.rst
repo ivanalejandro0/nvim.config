@@ -1,9 +1,21 @@
-System dependencies
+Quick installation
+==================
+
+Run the command below, it will download the installer script and run it in your computer.
+Note: it will ask for admin password to install the needed dependencies.
+
+::
+
+    wget -qO - https://raw.github.com/ivanalejandro0/vim-configs/master/install.sh | sudo bash
+
+Manual installation
 ===================
 
-* First of all, you'll need ``git`` to clone the repository.
-* You need to install ``flake8`` in order to support python style/syntax checks through Syntastic.
-* You need ``exuberant-ctags`` to allow TagBar and CtrlP to generate tags to display.
+You need to install the system dependencies:
+
+* ``git`` to clone the repository.
+* ``flake8`` in order to support python style/syntax checks through Syntastic.
+* ``exuberant-ctags`` to allow TagBar and CtrlP to generate tags to display.
 * In order to use the python/php debugger, you'll need ``vim-debug`` and ``dbgp``.
 
 You can install them as follows (``apt-get`` works in a debian based distro)::
@@ -14,13 +26,11 @@ You can install them as follows (``apt-get`` works in a debian based distro)::
     $ sudo pip install vim-debug dbgp
 
 
-Installation
-============
-
-You need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
+After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
 
     $ cd
-    $ mv .vim .vim.old; mv .vimrc .vimrc.old  # in case that you have existing vim configurations
+    $ mkdir .vim.old/
+    $ mv .vim .vimrc .viminfo .vim.old/  # in case that you have existing vim configurations
     $ git clone https://github.com/ivanalejandro0/vim-configs.git .vim
     $ ln -s .vim/dot.vimrc .vimrc
 
