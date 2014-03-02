@@ -4,7 +4,7 @@ cd
 
 # Install dependencies
 apt-get install -y git python-pip exuberant-ctags
-pip install flake8 vim-debug dbgp
+pip install flake8 jsbeautifier vim-debug dbgp
 
 # In case that you have existing vim configurations
 mkdir ~/.vim.old/
