@@ -74,3 +74,14 @@ Debugger                            `vim-debug <https://github.com/jabapyth/vim-
 Python pep8 indent                  `vim-python-pep8-indent <https://github.com/hynek/vim-python-pep8-indent>`_
 Easy interaction with tmux          `vimux <https://github.com/benmills/vimux>`_
 ==================================  ===========================================================================
+
+
+Thanks to
+=========
+
+I've got a lot of inspiration from users who share their vim configurations, here are some of the most relevant for me:
+
+* https://github.com/fisadev/fisa-vim-config
+* https://github.com/carlhuda/janus
+* https://bitbucket.org/sjl/dotfiles/src/tip/vim/
+* https://github.com/skwp/dotfiles/tree/master/vim
