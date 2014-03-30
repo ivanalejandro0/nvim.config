@@ -1,3 +1,6 @@
+" Get rid of Ex mode
+nnoremap Q <Nop>
+
 " move forward one character in insert mode
 " useful to skip characteres inserted by autoclose
 inoremap <C-f> <Right>
