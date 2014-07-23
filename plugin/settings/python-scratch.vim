@@ -15,6 +15,9 @@ function! RunPython()
 
     " Insert execution output
     0 put = output
+
+    " Return to previous window
+    wincmd p
 endfunction
 
 autocmd FileType python nnoremap <buffer> <leader>r :call RunPython()<CR>
