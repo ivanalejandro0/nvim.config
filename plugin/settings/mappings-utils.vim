@@ -42,3 +42,11 @@ nnoremap <silent> co8 :call g:ToggleColorColumn()<CR>
 
 " toggle paste mode (vim-unimpaired style)
 nnoremap <silent> cop :set paste! paste?<CR>
+
+" Scroll split window without switching
+nnoremap <silent><M-S-Up> :wincmd w<CR><C-U>:wincmd w<CR>
+nnoremap <silent><M-S-Down> :wincmd w<CR><C-D>:wincmd w<CR>
+
+" Move tabs
+nnoremap <M-S-Left> :tabm -1<CR>
+nnoremap <M-S-Right> :tabm +1<CR>
