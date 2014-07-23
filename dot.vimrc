@@ -48,6 +48,7 @@
     set smartcase  " ...unless we type a capital             "
     set incsearch  " incremental search (search as you type)
     set nohlsearch " don't highlight search results
+    set nowrapscan " stop searching after reaching first/last occurrence
 " }
 
 " Indentation {
