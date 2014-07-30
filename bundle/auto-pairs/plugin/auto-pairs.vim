@@ -1,8 +1,8 @@
 " Insert or delete brackets, parens, quotes in pairs.
 " Maintainer:	JiangMiao <jiangfriend@gmail.com>
 " Contributor: camthompson
-" Last Change:  2013-04-01
-" Version: 1.3.1
+" Last Change:  2013-07-13
+" Version: 1.3.2
 " Homepage: http://www.vim.org/scripts/script.php?script_id=3599
 " Repository: https://github.com/jiangmiao/auto-pairs
 " License: MIT
@@ -419,7 +419,12 @@ function! AutoPairsInit()
   end
 
   if g:AutoPairsMapSpace
-    execute 'inoremap <buffer> <silent> <SPACE> <C-R>=AutoPairsSpace()<CR>'
+    " Try to respect abbreviations on a <SPACE>
+    let do_abbrev = ""
+    if v:version == 703 && has("patch489") || v:version > 703
+      let do_abbrev = "<C-]>"
+    endif
+    execute 'inoremap <buffer> <silent> <SPACE> '.do_abbrev.'<C-R>=AutoPairsSpace()<CR>'
   end
 
   if g:AutoPairsShortcutFastWrap != ''
@@ -468,7 +473,7 @@ function! AutoPairsTryInit()
   " Buffer level keys mapping
   " comptible with other plugin
   if g:AutoPairsMapCR
-    if v:version >= 703 && has('patch32')
+    if v:version == 703 && has('patch32') || v:version > 703
       " VIM 7.3 supports advancer maparg which could get <expr> info
       " then auto-pairs could remap <CR> in any case.
       let info = maparg('<CR>', 'i', 0, 1)
@@ -493,7 +498,10 @@ function! AutoPairsTryInit()
       else
         let old_cr = s:ExpandMap(old_cr)
         " old_cr contain (, I guess the old cr is in expr mode
-        let is_expr = old_cr  =~ '\V(' && toupper(old_cr) !~ '\V<C-R>'
+        let is_expr = old_cr =~ '\V(' && toupper(old_cr) !~ '\V<C-R>'
+
+        " The old_cr start with " it must be in expr mode
+        let is_expr = is_expr || old_cr =~ '\v^"'
         let wrapper_name = '<SID>AutoPairsOldCRWrapper'
       end
     end
@@ -504,7 +512,7 @@ function! AutoPairsTryInit()
         execute 'inoremap <buffer> <expr> <script> '. wrapper_name . ' ' . old_cr
         let old_cr = wrapper_name
       end
-      " Alawys slient mapping
+      " Always silent mapping
       execute 'inoremap <script> <buffer> <silent> <CR> '.old_cr.'<SID>AutoPairsReturn'
     end
   endif
