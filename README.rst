@@ -6,7 +6,7 @@ Note: it will ask for admin password to install the needed dependencies.
 
 ::
 
-    wget -qO - https://raw.github.com/ivanalejandro0/vim-configs/master/install.sh | sudo bash
+    wget -qO - https://raw.github.com/ivanalejandro0/vim-configs/master/install.sh | bash
 
 Manual installation
 ===================
