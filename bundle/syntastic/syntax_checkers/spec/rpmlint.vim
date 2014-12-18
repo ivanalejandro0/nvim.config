@@ -1,7 +1,7 @@
 "============================================================================
-"File:        rust.vim
+"File:        rpmlint.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Chad Jablonski <chad.jablonski at gmail dot com>
+"Maintainer:  LCD 47 <lcd047 at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -10,27 +10,23 @@
 "
 "============================================================================
 
-if exists("g:loaded_syntastic_rust_rustc_checker")
+if exists('g:loaded_syntastic_spec_rpmlint_checker')
     finish
 endif
-let g:loaded_syntastic_rust_rustc_checker=1
+let g:loaded_syntastic_spec_rpmlint_checker = 1
 
-function! SyntaxCheckers_rust_rustc_IsAvailable()
-    return executable("rustc")
-endfunction
+let s:save_cpo = &cpo
+set cpo&vim
 
-function! SyntaxCheckers_rust_rustc_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-        \ 'exe': 'rustc',
-        \ 'args': '--parse-only',
-        \ 'filetype': 'rust',
-        \ 'subchecker': 'rustc' })
+function! SyntaxCheckers_spec_rpmlint_GetLocList() dict
+    let makeprg = self.makeprgBuild({})
 
-    let errorformat  =
-        \ '%E%f:%l:%c: \\d%#:\\d%# %.%\{-}error:%.%\{-} %m,'   .
-        \ '%W%f:%l:%c: \\d%#:\\d%# %.%\{-}warning:%.%\{-} %m,' .
-        \ '%C%f:%l %m,' .
-        \ '%-Z%.%#'
+    let errorformat =
+        \ '%E%f:%l: E: %m,' .
+        \ '%E%f: E: %m,' .
+        \ '%W%f:%l: W: %m,' .
+        \ '%W%f: W: %m,' .
+        \ '%-G%.%#'
 
     return SyntasticMake({
         \ 'makeprg': makeprg,
@@ -38,5 +34,10 @@ function! SyntaxCheckers_rust_rustc_GetLocList()
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'rust',
-    \ 'name': 'rustc'})
+    \ 'filetype': 'spec',
+    \ 'name': 'rpmlint'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

@@ -8,35 +8,19 @@
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "============================================================================
-"
-" Specify additional options to csslint with this option. e.g. to disable
-" warnings:
-"
-"   let g:syntastic_csslint_options = '--warnings=none'
 
 if exists('g:loaded_syntastic_css_csslint_checker')
     finish
 endif
-let g:loaded_syntastic_css_csslint_checker=1
+let g:loaded_syntastic_css_csslint_checker = 1
 
-if !exists('g:syntastic_csslint_exec')
-    let g:syntastic_csslint_exec = 'csslint'
-endif
+let s:save_cpo = &cpo
+set cpo&vim
 
-if !exists('g:syntastic_csslint_options')
-    let g:syntastic_csslint_options = ''
-endif
+function! SyntaxCheckers_css_csslint_GetLocList() dict
+    call syntastic#log#deprecationWarn('csslint_options', 'css_csslint_args')
 
-function! SyntaxCheckers_css_csslint_IsAvailable()
-    return executable(expand(g:syntastic_csslint_exec))
-endfunction
-
-function! SyntaxCheckers_css_csslint_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-        \ 'exe': expand(g:syntastic_csslint_exec),
-        \ 'args': '--format=compact ' . g:syntastic_csslint_options,
-        \ 'filetype': 'css',
-        \ 'subchecker': 'csslint' })
+    let makeprg = self.makeprgBuild({ 'args_after': '--format=compact' })
 
     " Print CSS Lint's error/warning messages from compact format. Ignores blank lines.
     let errorformat =
@@ -56,3 +40,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'css',
     \ 'name': 'csslint'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

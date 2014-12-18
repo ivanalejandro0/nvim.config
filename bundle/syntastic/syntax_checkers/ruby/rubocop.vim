@@ -9,27 +9,28 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-"
-" In order to use rubocop with the default ruby checker (mri):
-"     let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 if exists("g:loaded_syntastic_ruby_rubocop_checker")
     finish
 endif
-let g:loaded_syntastic_ruby_rubocop_checker=1
+let g:loaded_syntastic_ruby_rubocop_checker = 1
 
-function! SyntaxCheckers_ruby_rubocop_IsAvailable()
-    return
-        \ executable('rubocop') &&
-        \ syntastic#util#versionIsAtLeast(syntastic#util#getVersion('rubocop --version'), [0,9,0])
+let s:save_cpo = &cpo
+set cpo&vim
+
+function! SyntaxCheckers_ruby_rubocop_IsAvailable() dict
+    if !executable(self.getExec())
+        return 0
+    endif
+
+    let ver = syntastic#util#getVersion(self.getExecEscaped() . ' --version')
+    call self.log(self.getExec() . ' version =', ver)
+
+    return syntastic#util#versionIsAtLeast(ver, [0, 9, 0])
 endfunction
 
-function! SyntaxCheckers_ruby_rubocop_GetLocList()
-    let makeprg = syntastic#makeprg#build({
-        \ 'exe': 'rubocop',
-        \ 'args': '--format emacs --silent',
-        \ 'filetype': 'ruby',
-        \ 'subchecker': 'rubocop' })
+function! SyntaxCheckers_ruby_rubocop_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'args_after': '--format emacs --silent' })
 
     let errorformat = '%f:%l:%c: %t: %m'
 
@@ -39,11 +40,11 @@ function! SyntaxCheckers_ruby_rubocop_GetLocList()
         \ 'subtype': 'Style'})
 
     " convert rubocop severities to error types recognized by syntastic
-    for n in range(len(loclist))
-        if loclist[n]['type'] == 'F'
-            let loclist[n]['type'] = 'E'
-        elseif loclist[n]['type'] != 'W' && loclist[n]['type'] != 'E'
-            let loclist[n]['type'] = 'W'
+    for e in loclist
+        if e['type'] ==# 'F'
+            let e['type'] = 'E'
+        elseif e['type'] !=# 'W' && e['type'] !=# 'E'
+            let e['type'] = 'W'
         endif
     endfor
 
@@ -53,3 +54,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'ruby',
     \ 'name': 'rubocop'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:
