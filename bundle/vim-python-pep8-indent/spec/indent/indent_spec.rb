@@ -76,6 +76,21 @@ shared_examples_for "vim" do
     end
   end
 
+  describe "when after an '{' that is followed by a comment" do
+    before { vim.feedkeys 'imydict = {  # comment\<CR>' }
+
+    it "indent by one level" do
+      indent.should == shiftwidth
+      vim.feedkeys '1: 1,\<CR>'
+      indent.should == shiftwidth
+    end
+
+    it "lines up the closing parenthesis" do
+      vim.feedkeys '}'
+      indent.should == 0
+    end
+  end
+
   describe "when using gq to reindent a '(' that is" do
     before { vim.feedkeys 'itest(' }
     it "something and has a string without spaces at the end" do
@@ -129,10 +144,95 @@ shared_examples_for "vim" do
     end
   end
 
+  describe "when the previous line has a colon in a string" do
+    before { vim.feedkeys 'itest(":".join(["1","2"]))\<CR>' }
+    it "does not indent" do
+      vim.feedkeys 'if True:'
+      indent.should == 0
+      proposed_indent.should == 0
+    end
+  end
+
+  describe "when after an '(' that is followed by an unfinished string" do
+    before { vim.feedkeys 'itest("""' }
+
+    it "it does not indent the next line" do
+      vim.feedkeys '\<CR>'
+      proposed_indent.should == 0
+      indent.should == 0
+    end
+
+    it "with contents it does not indent the next line" do
+      vim.feedkeys 'string_contents\<CR>'
+      proposed_indent.should == 0
+      indent.should == 0
+    end
+  end
+
+  describe "when after assigning an unfinished string" do
+    before { vim.feedkeys 'itest = """' }
+
+    it "it does not indent the next line" do
+      vim.feedkeys '\<CR>'
+      proposed_indent.should == 0
+      indent.should == 0
+    end
+  end
+
+  describe "when after assigning an unfinished string" do
+    before { vim.feedkeys 'i    test = """' }
+
+    it "it does not indent the next line" do
+      vim.feedkeys '\<CR>'
+      proposed_indent.should == 0
+      indent.should == 0
+    end
+  end
+
+  describe "when after assigning a finished string" do
+    before { vim.feedkeys 'i    test = ""' }
+
+    it "it does indent the next line" do
+      vim.feedkeys '\<CR>'
+      proposed_indent.should == 4
+      indent.should == 4
+    end
+
+    it "and writing a new string, it does indent the next line" do
+      vim.feedkeys '\<CR>""'
+      proposed_indent.should == 4
+      indent.should == 4
+    end
+  end
+
+  describe "when after a docstring" do
+    before { vim.feedkeys 'i    """' }
+
+    it "it does indent the next line" do
+      vim.feedkeys '\<CR>'
+      proposed_indent.should == 4
+      indent.should == 4
+    end
+  end
+
   describe "when using simple control structures" do
       it "indents shiftwidth spaces" do
           vim.feedkeys 'iwhile True:\<CR>pass'
           indent.should == shiftwidth
+      end
+  end
+
+  describe "when using a function definition" do
+      it "indents shiftwidth spaces" do
+          vim.feedkeys 'idef long_function_name(\<CR>arg'
+          indent.should == shiftwidth * 2
+      end
+  end
+
+  describe "when using a class definition" do
+      it "indents shiftwidth spaces" do
+          vim.feedkeys 'iclass Foo(\<CR>'
+          indent.should == shiftwidth * 2
       end
   end
 
@@ -296,6 +396,20 @@ shared_examples_for "vim" do
         vim.feedkeys 'finally:'
         indent.should == shiftwidth * 2
      end
+  end
+
+  describe "when jedi-vim call signatures are used" do
+    before { vim.command 'syn match jediFunction "JEDI_CALL_SIGNATURE" keepend extend' }
+
+    it "ignores the call signature after a colon" do
+      vim.feedkeys 'iif True:  JEDI_CALL_SIGNATURE\<CR>'
+      indent.should == shiftwidth
+    end
+
+    it "ignores the call signature after a function" do
+      vim.feedkeys 'idef f(  JEDI_CALL_SIGNATURE\<CR>'
+      indent.should == shiftwidth * 2
+    end
   end
 
   def shiftwidth
