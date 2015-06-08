@@ -1,0 +1,7 @@
+" For to-do lists
+" [ ] to do        -> \1
+" [~] in progress  -> \2
+" [✔] done         -> \3
+autocmd FileType taskedit :nnoremap <buffer> <leader>1 mz:s/\[.\]/[ ]/<CR>`z
+autocmd FileType taskedit :nnoremap <buffer> <leader>2 mz:s/\[.\]/[\~]/<CR>`z
+autocmd FileType taskedit :nnoremap <buffer> <leader>3 mz:s/\[.\]/[✔]/<CR>`z

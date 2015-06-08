@@ -1,3 +1,8 @@
+" add all the plugins
+if filereadable(expand("~/.vim/plugins.vim"))
+  source ~/.vim/plugins.vim
+endif
+
 " General settings {
     " Use Vim settings, rather then Vi settings (much better!).
     " This must be first, because it changes other options as a side effect.
@@ -71,10 +76,6 @@
     set foldlevel=1       " this is just what i use
 " }
 
-" start the plugin manager
-call pathogen#infect()
-call pathogen#helptags()
-
 " Status line { (from https://github.com/swaroopch/dotvim/blob/master/vimrc)
     set laststatus=2                             " always show the status line
     set statusline=
@@ -96,7 +97,9 @@ set wildmode=list:longest
     " use 256 colors when possible
     if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
         let &t_Co = 256
-        colorscheme fisa
+        " colorscheme fisa
+        " colorscheme kalisi
+        colorscheme jellybeans
     else
         colorscheme delek
     endif
