@@ -14,4 +14,3 @@ fi
 
 # Clone repo and symlink the vimrc file
 git clone https://github.com/ivanalejandro0/vim-configs.git .vim
-ln -s .vim/dot.vimrc .vimrc
