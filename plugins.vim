@@ -68,6 +68,9 @@ Plug 'godlygeek/tabular'
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 
+" Show a diff via Vim sign column
+Plug 'mhinz/vim-signify', {'on': 'SignifyToggle'}
+
 " vim-repeat: Repeating support for plugins
 Plug 'tpope/vim-repeat'
 
