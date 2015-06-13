@@ -106,8 +106,9 @@ set wildmode=list:longest
 
     " colors for gvim
     if has('gui_running')
-        colorscheme wombat
+        " colorscheme wombat
+        colorscheme jellybeans
         set guioptions-=T
-        set guifont=Droid\ Sans\ Mono\ 12
+        " set guifont=Droid\ Sans\ Mono\ 12
     endif
 " }
