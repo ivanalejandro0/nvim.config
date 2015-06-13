@@ -2,6 +2,7 @@ if empty(glob('~/.vim/plugged'))
   autocmd VimEnter * PlugInstall
 endif
 
+" This code sources all the vim files stored in custom/before
 for f in split(glob('~/.vim/custom/before/*.vim'), '\n')
     exe 'source' f
 endfor
@@ -23,24 +24,27 @@ Plug 'scrooloose/syntastic'
 " TagBar: Class browser
 Plug 'majutsushi/tagbar'
 
-" Yankring: Copy history navigation
-" this needs to be loaded before 'surround' since overrides 'S' key mapping
+" Store and cycle through yanked text strings.
+" note: this needs to be loaded before 'surround' since overrides 'S' key mapping
 Plug 'maxbrunsfeld/vim-yankstack'
 
-" Surround: Surrounding text util
+" quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
-" CtrlP: Partial pattern explore
+" Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
+
+" CtrlP plugin: Filetype finder and setter.
+Plug 'endel/ctrlp-filetype.vim'
 
 " Matchit: Extended match plugin
 " http://www.vim.org/scripts/script.php?script_id=39
 Plug 'matchit.zip'
 
-" UltiSnips: Snippets
+" The ultimate snippet solution for Vim
 Plug 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
+" Snippets are separated from the engine.
 Plug 'honza/vim-snippets'
 
 " MatchTag: Color match html/xml tags
@@ -55,6 +59,7 @@ Plug 'jiangmiao/auto-pairs'
 " misc helper mappings
 Plug 'tpope/vim-unimpaired'
 
+" lean & mean status/tabline for vim that's light as air
 Plug 'bling/vim-airline'
 
 " tabular: Tabular, the text aligner
@@ -69,14 +74,8 @@ Plug 'tpope/vim-repeat'
 " vim-indent-object: Indent Text Object
 Plug 'michaeljsmith/vim-indent-object'
 
-" ctrlp-filetype: Filetype extension for CtrlP
-Plug 'endel/ctrlp-filetype.vim'
-
 " terminalkeys.vim: Terminal Keys settings
 Plug 'nacitar/terminalkeys.vim'
-
-" vim-slime: Interaction with tmux/screen
-Plug 'jpalardy/vim-slime'
 
 " vim-virtualenv: Virtualenv support
 Plug 'jmcantrell/vim-virtualenv'
@@ -99,7 +98,6 @@ Plug 'hynek/vim-python-pep8-indent'
 " vimux: Easy interaction with tmux
 Plug 'benmills/vimux'
 
-
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
   " - name:   name of the plugin
@@ -113,23 +111,21 @@ endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 " autocmd! User YouCompleteMe call youcompleteme#Enable()
 
-" Wombat: Colorscheme for gvim
-Plug 'Wombat'
-
-" Fisa Colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
-
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
 
-Plug 'freeo/vim-kalisi'
+" Colorscheme for gvim
+Plug 'Wombat'
 
+Plug 'fisadev/fisa-vim-colorscheme'
+Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
 
 function s:after()
+    " This code sources all the vim files stored in custom/after
     for f in split(glob('~/.vim/custom/after/*.vim'), '\n')
         exe 'source' f
     endfor
