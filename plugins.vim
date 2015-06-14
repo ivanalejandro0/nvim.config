@@ -117,6 +117,9 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
 
+" ack/ag integration
+Plug 'mileszs/ack.vim'
+
 " Colorscheme for gvim
 Plug 'Wombat'
 
