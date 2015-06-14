@@ -101,18 +101,8 @@ Plug 'hynek/vim-python-pep8-indent'
 " vimux: Easy interaction with tmux
 Plug 'benmills/vimux'
 
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh
-  endif
-endfunction
-
+" BuildYCM function defined on custom/before/youcompleteme.vim
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-" autocmd! User YouCompleteMe call youcompleteme#Enable()
 
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
