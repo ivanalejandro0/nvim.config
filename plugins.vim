@@ -110,6 +110,9 @@ Plug 'ekalinin/Dockerfile.vim'
 " ack/ag integration
 Plug 'mileszs/ack.vim'
 
+" display registers
+Plug 'junegunn/vim-peekaboo'
+
 " Colorscheme for gvim
 Plug 'Wombat'
 
