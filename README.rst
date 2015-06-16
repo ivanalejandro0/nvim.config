@@ -25,6 +25,10 @@ You can install them as follows (``apt-get`` works in a debian based distro)::
     $ sudo pip install flake8
     $ sudo pip install vim-debug dbgp
 
+    $ sudo apt-get install build-essential cmake python-dev  # for YouCompleteMe
+
+
+
 
 After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
 
