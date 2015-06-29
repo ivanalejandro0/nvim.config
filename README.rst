@@ -14,16 +14,19 @@ Manual installation
 You need to install the system dependencies:
 
 * ``git`` to clone the repository.
+* ``jsbeautifier`` in order to beautify your javascript code.
 * ``flake8`` in order to support python style/syntax checks through Syntastic.
 * ``exuberant-ctags`` to allow TagBar and CtrlP to generate tags to display.
+* ``build-essential``, ``cmake``, ``python-dev`` to build/run YouCompleteMe.
 * In order to use the python/php debugger, you'll need ``vim-debug`` and ``dbgp``.
 
 You can install them as follows (``apt-get`` works in a debian based distro)::
 
-    $ sudo apt-get install exuberant-ctags
-    $ sudo apt-get install python-pip
-    $ sudo pip install flake8
-    $ sudo pip install vim-debug dbgp
+    $ sudo apt-get install -y git python-pip exuberant-ctags build-essential cmake python-dev
+    # user-wide installation:
+    $ pip install --user --upgrade flake8 jsbeautifier vim-debug dbgp
+    # or, system-wide installation:
+    $ sudo pip install flake8 vim-debug dbgp
 
 
 After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
@@ -32,11 +35,12 @@ After that you need to clone this repository in the home, name it as ``.vim`` an
     $ mkdir .vim.old/
     $ mv .vim .vimrc .viminfo .vim.old/  # in case that you have existing vim configurations
     $ git clone https://github.com/ivanalejandro0/vim-configs.git .vim
-    $ ln -s .vim/dot.vimrc .vimrc
 
 
 Plugin list
 ===========
+
+NOTE: this is slightly out of date
 
 ==================================  ===========================================================================
 Plugin                              Webpage
