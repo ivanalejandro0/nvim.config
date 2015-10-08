@@ -20,7 +20,9 @@ You need to install the system dependencies:
 * ``build-essential``, ``cmake``, ``python-dev`` to build/run YouCompleteMe.
 * In order to use the python/php debugger, you'll need ``vim-debug`` and ``dbgp``.
 
-You can install them as follows (``apt-get`` works in a debian based distro)::
+You can install them as follows (``apt-get`` works in a debian based distro):
+
+.. code-block:: bash
 
     $ sudo apt-get install -y git python-pip exuberant-ctags build-essential cmake python-dev
     # user-wide installation:
@@ -29,7 +31,9 @@ You can install them as follows (``apt-get`` works in a debian based distro)::
     $ sudo pip install flake8 vim-debug dbgp
 
 
-After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file::
+After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file:
+
+.. code-block:: bash
 
     $ cd
     $ mkdir .vim.old/
@@ -40,50 +44,16 @@ After that you need to clone this repository in the home, name it as ``.vim`` an
 Plugin list
 ===========
 
-NOTE: this is slightly out of date
+For a list of plugins used here take a look at `plugins.vim`_ file.
 
-==================================  ===========================================================================
-Plugin                              Webpage
-==================================  ===========================================================================
-Plugin manager                      `Pathogen <https://github.com/tpope/vim-pathogen>`_
-Tree file eplorer                   `NERDTree <https://github.com/scrooloose/nerdtree>`_
-Magical way to code html            `Emmet <http://github.com/mattn/emmet-vim>`_
-Code commenter                      `tComment <https://github.com/tomtom/tcomment_vim>`_
-Todo manager                        `TaskList <http://juan.boxfi.com/vim-plugins/#tasklist>`_
-Syntax checker                      `Syntastic <https://github.com/scrooloose/syntastic>`_
-Class browser                       `TagBar <http://majutsushi.github.com/tagbar/>`_
-Surrounding text util               `Surround <https://github.com/tpope/vim-surround>`_
-Partial pattern explore             `CtrlP <https://github.com/kien/ctrlp.vim>`_
-Extended match plugin               `Matchit <http://www.vim.org/scripts/script.php?script_id=39>`_
-Non intrusive autocomplete popup    `Autocomplpop <https://bitbucket.org/ns9tks/vim-autocomplpop/>`_
-Snippets                            `UltiSnips <https://github.com/SirVer/ultisnips>`_
-Color match html/xml tags           `MatchTag <https://github.com/gregsexton/MatchTag>`_
-Colorscheme for gvim                `Wombat <http://www.vim.org/scripts/script.php?script_id=1778>`_
-Colorscheme for vim                 `fisa <https://github.com/fisadev/fisa-vim-colorscheme>`_
-Javascript improvements             `vim-javascript <https://github.com/pangloss/vim-javascript>`_
-Autoclose feature                   `auto-pairs <https://github.com/jiangmiao/auto-pairs>`_
-Copy history navigation             `yankring <http://www.vim.org/scripts/script.php?script_id=1234>`_
-Beautiful status line               `vim-powerline <https://github.com/Lokaltog/vim-powerline>`_
-Tabular, the text aligner           `tabular <https://github.com/godlygeek/tabular>`_
-Repeating support for plugins       `vim-repeat <https://github.com/tpope/vim-repeat>`_
-Indent Text Object                  `vim-indent-object <https://github.com/michaeljsmith/vim-indent-object>`_
-Filetype extension for CtrlP        `ctrlp-filetype <https://github.com/endel/ctrlp-filetype.vim>`_
-Terminal Keys settings              `terminalkeys.vim <https://github.com/nacitar/terminalkeys.vim.git>`_
-Interaction with tmux/screen        `vim-slime <https://github.com/jpalardy/vim-slime>`_
-Virtualenv support                  `vim-virtualenv <https://github.com/jmcantrell/vim-virtualenv.git>`_
-Graph vim undo history              `gundo <https://github.com/sjl/gundo.vim.git>`_
-Toggle window zoom                  `ZoomWin <http://www.drchip.org/astronaut/vim/index.html#ZOOMWIN>`_
-Scratch buffer                      `vim-scratch <https://github.com/ivanalejandro0/vim-scratch>`_
-Debugger                            `vim-debug <https://github.com/jabapyth/vim-debug>`_
-Python pep8 indent                  `vim-python-pep8-indent <https://github.com/hynek/vim-python-pep8-indent>`_
-Easy interaction with tmux          `vimux <https://github.com/benmills/vimux>`_
-==================================  ===========================================================================
+.. _`plugins.vim`: https://github.com/ivanalejandro0/vim-configs/blob/master/plugins.vim
 
 
 Thanks to
 =========
 
-I've got a lot of inspiration from users who share their vim configurations, here are some of the most relevant for me:
+I've got a lot of inspiration from users who share their vim configurations,
+here are some of the most relevant for me:
 
 * https://github.com/fisadev/fisa-vim-config
 * https://github.com/carlhuda/janus
