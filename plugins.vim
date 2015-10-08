@@ -53,6 +53,12 @@ Plug 'gregsexton/MatchTag'
 " vim-javascript: Javascript improvements
 Plug 'pangloss/vim-javascript'
 
+" Syntax for JavaScript libraries
+" Plug 'othree/javascript-libraries-syntax.vim'
+
+" Angular snippets
+" Plug 'matthewsimo/angular-vim-snippets'
+
 " auto-pairs: Autoclose feature
 Plug 'jiangmiao/auto-pairs'
 
@@ -109,9 +115,6 @@ Plug 'ekalinin/Dockerfile.vim'
 
 " ack/ag integration
 Plug 'mileszs/ack.vim'
-
-" display registers
-Plug 'junegunn/vim-peekaboo'
 
 " Colorscheme for gvim
 Plug 'Wombat'
