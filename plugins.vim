@@ -1,13 +1,13 @@
-if empty(glob('~/.vim/plugged'))
+if empty(glob('~/.config/nvim/plugged'))
   autocmd VimEnter * PlugInstall
 endif
 
 " This code sources all the vim files stored in custom/before
-for f in split(glob('~/.vim/custom/before/*.vim'), '\n')
+for f in split(glob('~/.config/nvim/custom/before/*.vim'), '\n')
     exe 'source' f
 endfor
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -131,7 +131,7 @@ call plug#end()
 
 function s:after()
     " This code sources all the vim files stored in custom/after
-    for f in split(glob('~/.vim/custom/after/*.vim'), '\n')
+    for f in split(glob('~/.config/nvim/custom/after/*.vim'), '\n')
         exe 'source' f
     endfor
 endfunction

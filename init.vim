@@ -1,6 +1,6 @@
 " add all the plugins
-if filereadable(expand("~/.vim/plugins.vim"))
-  source ~/.vim/plugins.vim
+if filereadable(expand("~/.config/nvim/plugins.vim"))
+  source ~/.config/nvim/plugins.vim
 endif
 
 " General settings {
@@ -19,12 +19,12 @@ endif
 
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
-    set directory=~/.vim/dirs/tmp     " directory to place swap files in
+    set directory=~/.config/nvim/dirs/tmp     " directory to place swap files in
     set backup                        " make backup files
-    set backupdir=~/.vim/dirs/backups " where to put backup files
+    set backupdir=~/.config/nvim/dirs/backups " where to put backup files
     set undofile                      " persistent undos - undo after you re-open the file
-    set undodir=~/.vim/dirs/undos
-    set viminfo+=n~/.vim/dirs/viminfo
+    set undodir=~/.config/nvim/dirs/undos
+    set viminfo+=n~/.config/nvim/dirs/viminfo
 
     " Create needed directories if they don't exist
     if !isdirectory(&backupdir)
