@@ -18,8 +18,8 @@ Plug 'mattn/emmet-vim'
 " tComment: Code commenter
 Plug 'tomtom/tcomment_vim'
 
-" Syntastic: Syntax checker
-Plug 'scrooloose/syntastic'
+" Neomake: async syntax checker
+Plug 'benekastah/neomake'
 
 " TagBar: Class browser
 Plug 'majutsushi/tagbar'
