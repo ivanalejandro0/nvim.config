@@ -95,7 +95,7 @@ set wildmode=list:longest
 
 " Color schemes {
     " use 256 colors when possible
-    if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
+    if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
         let &t_Co = 256
         " colorscheme fisa
         " colorscheme kalisi
