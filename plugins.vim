@@ -123,6 +123,8 @@ Plug 'fisadev/fisa-vim-colorscheme'
 Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
 
+Plug 'peterhoeg/vim-qml'
+
 call plug#end()
 
 
