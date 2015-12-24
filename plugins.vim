@@ -32,7 +32,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " CtrlP plugin: Filetype finder and setter.
 Plug 'endel/ctrlp-filetype.vim'
