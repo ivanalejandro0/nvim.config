@@ -53,6 +53,9 @@ Plug 'gregsexton/MatchTag'
 " vim-javascript: Javascript improvements
 Plug 'pangloss/vim-javascript'
 
+" ReactJS support
+Plug 'mxw/vim-jsx'
+
 " Syntax for JavaScript libraries
 " Plug 'othree/javascript-libraries-syntax.vim'
 
