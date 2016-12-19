@@ -26,7 +26,11 @@ Plug 'majutsushi/tagbar'
 
 " Store and cycle through yanked text strings.
 " note: this needs to be loaded before 'surround' since overrides 'S' key mapping
-Plug 'maxbrunsfeld/vim-yankstack'
+" note: disabled temporarily since it overwrites 'gg'
+" Plug 'maxbrunsfeld/vim-yankstack'
+" to test:
+" https://github.com/bfredl/nvim-miniyank
+" https://github.com/machakann/vim-highlightedyank
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -88,7 +92,7 @@ Plug 'tpope/vim-repeat'
 Plug 'michaeljsmith/vim-indent-object'
 
 " terminalkeys.vim: Terminal Keys settings
-Plug 'nacitar/terminalkeys.vim'
+" Plug 'nacitar/terminalkeys.vim'
 
 " vim-virtualenv: Virtualenv support
 Plug 'jmcantrell/vim-virtualenv'
@@ -101,9 +105,6 @@ Plug 'dr-chip-vim-scripts/ZoomWin'
 
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
-
-" vim-debug: Debugger
-Plug 'jabapyth/vim-debug'
 
 " vim-python-pep8-indent: Python pep8 indent
 Plug 'hynek/vim-python-pep8-indent'
@@ -123,8 +124,8 @@ Plug 'mileszs/ack.vim'
 " Colorscheme for gvim
 Plug 'Wombat'
 
-Plug 'fisadev/fisa-vim-colorscheme'
-Plug 'freeo/vim-kalisi'
+" Plug 'fisadev/fisa-vim-colorscheme'
+" Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
 
 Plug 'peterhoeg/vim-qml'
