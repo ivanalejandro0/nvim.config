@@ -8,6 +8,8 @@ endif
     " This must be first, because it changes other options as a side effect.
     set nocompatible
 
+    " set termguicolors
+
     set encoding=utf-8
     syntax on " syntax highlighting on
     setlocal spelllang=es " en
