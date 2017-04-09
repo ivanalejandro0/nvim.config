@@ -1,3 +1,13 @@
+NeoVim configs
+==============
+
+This is where I store my neovim configurations and used plugins. I use them on Linux and OSX, things may break for you, let me know if something need fixing.
+
+You can manually install this or you can trust on the ``install.sh`` script that could be outdated at some point. I recommend you to follow the manual installation step and leaverage the install script to automate it, tweak it as you please.
+
+This configurations won't work on vim mostly because of the file naming (``init.vim`` vs ``.vimrc``) but most of the configurations and code will, so if you want you can copy/paste most of this.
+
+
 Quick installation
 ==================
 
@@ -11,34 +21,19 @@ Note: it will ask for admin password to install the needed dependencies.
 Manual installation
 ===================
 
-You need to install the system dependencies:
-
-* ``git`` to clone the repository.
-* ``jsbeautifier`` in order to beautify your javascript code.
-* ``flake8`` in order to support python style/syntax checks through Syntastic.
-* ``exuberant-ctags`` to allow TagBar and CtrlP to generate tags to display.
-* ``build-essential``, ``cmake``, ``python-dev`` to build/run YouCompleteMe.
-* In order to use the python/php debugger, you'll need ``vim-debug`` and ``dbgp``.
-
-You can install them as follows (``apt-get`` works in a debian based distro):
+You can install the required dependencies as follows (``apt-get`` works in a debian based distro):
 
 .. code-block:: bash
 
     $ sudo apt-get install -y git python-pip exuberant-ctags build-essential cmake python-dev
-    # user-wide installation:
-    $ pip install --user --upgrade flake8 jsbeautifier vim-debug dbgp
-    # or, system-wide installation:
-    $ sudo pip install flake8 vim-debug dbgp
+    $ # user space installation
+    $ pip install --user --upgrade flake8 neovim
+    $ pip3 install --user --upgrade flake8 neovim
+
+Note: you can remove the ``--user`` flag if you want to install the python dependencies system-wide.
 
 
-After that you need to clone this repository in the home, name it as ``.vim`` and make a symlink for the ``.vimrc`` file:
-
-.. code-block:: bash
-
-    $ cd
-    $ mkdir .vim.old/
-    $ mv .vim .vimrc .viminfo .vim.old/  # in case that you have existing vim configurations
-    $ git clone https://github.com/ivanalejandro0/vim-configs.git .vim
+After that you need to clone this repository and place it on ``~/config/nvim``:
 
 
 Plugin list
