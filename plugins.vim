@@ -19,7 +19,8 @@ Plug 'mattn/emmet-vim'
 Plug 'tomtom/tcomment_vim'
 
 " Neomake: async syntax checker
-Plug 'benekastah/neomake'
+" Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 
 " TagBar: Class browser
 Plug 'majutsushi/tagbar'
