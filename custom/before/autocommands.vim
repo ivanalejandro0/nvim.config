@@ -1,7 +1,3 @@
-" automatically close autocompletion window
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 " less indent for some web formats
 autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss       setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -13,3 +9,6 @@ autocmd FileType qml        setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " filetype selection
 autocmd BufRead,BufNewFile *.mustache set filetype=html
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" golang spacing
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4

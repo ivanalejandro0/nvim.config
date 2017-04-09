@@ -1,12 +1,17 @@
 " add all the plugins
-if filereadable(expand("~/.vim/plugins.vim"))
-  source ~/.vim/plugins.vim
+if filereadable(expand("~/.config/nvim/plugins.vim"))
+  source ~/.config/nvim/plugins.vim
 endif
 
 " General settings {
     " Use Vim settings, rather then Vi settings (much better!).
     " This must be first, because it changes other options as a side effect.
     set nocompatible
+
+    " set termguicolors
+
+    " A buffer becomes hidden when it is abandoned
+    set hidden
 
     set encoding=utf-8
     syntax on " syntax highlighting on
@@ -19,12 +24,12 @@ endif
 
     set backspace=indent,eol,start  " backspace through everything in insert mode
 
-    set directory=~/.vim/dirs/tmp     " directory to place swap files in
+    set directory=~/.config/nvim/dirs/tmp     " directory to place swap files in
     set backup                        " make backup files
-    set backupdir=~/.vim/dirs/backups " where to put backup files
+    set backupdir=~/.config/nvim/dirs/backups " where to put backup files
     set undofile                      " persistent undos - undo after you re-open the file
-    set undodir=~/.vim/dirs/undos
-    set viminfo+=n~/.vim/dirs/viminfo
+    set undodir=~/.config/nvim/dirs/undos
+    set viminfo+=n~/.config/nvim/dirs/viminfo
 
     " Create needed directories if they don't exist
     if !isdirectory(&backupdir)
@@ -77,25 +82,27 @@ endif
 " }
 
 " Status line { (from https://github.com/swaroopch/dotvim/blob/master/vimrc)
-    set laststatus=2                             " always show the status line
-    set statusline=
-    set statusline+=%-3.3n\                      " buffer number
-    set statusline+=%f\                          " filename
-    set statusline+=%h%m%r%w                     " status flags
-    set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-    set statusline+=%=                           " right align remainder
-    set statusline+=0x%-8B                       " character value
-    set statusline+=%-14(%l,%c%V%)               " line, character
-    set statusline+=%<%P                         " file position
+    " set laststatus=2                             " always show the status line
+    " set statusline=
+    " set statusline+=%-3.3n\                      " buffer number
+    " set statusline+=%f\                          " filename
+    " set statusline+=%h%m%r%w                     " status flags
+    " set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+    " set statusline+=%=                           " right align remainder
+    " set statusline+=0x%-8B                       " character value
+    " set statusline+=%-14(%l,%c%V%)               " line, character
+    " set statusline+=%<%P                         " file position
 " }
 
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
 set wildmode=list:longest
 
+set termguicolors
+
 " Color schemes {
     " use 256 colors when possible
-    if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
+    if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
         let &t_Co = 256
         " colorscheme fisa
         " colorscheme kalisi

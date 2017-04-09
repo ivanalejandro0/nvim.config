@@ -1,13 +1,13 @@
-if empty(glob('~/.vim/plugged'))
+if empty(glob('~/.config/nvim/plugged'))
   autocmd VimEnter * PlugInstall
 endif
 
 " This code sources all the vim files stored in custom/before
-for f in split(glob('~/.vim/custom/before/*.vim'), '\n')
+for f in split(glob('~/.config/nvim/custom/before/*.vim'), '\n')
     exe 'source' f
 endfor
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -18,15 +18,20 @@ Plug 'mattn/emmet-vim'
 " tComment: Code commenter
 Plug 'tomtom/tcomment_vim'
 
-" Syntastic: Syntax checker
-Plug 'scrooloose/syntastic'
+" Neomake: async syntax checker
+" Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 
 " TagBar: Class browser
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " Store and cycle through yanked text strings.
 " note: this needs to be loaded before 'surround' since overrides 'S' key mapping
-Plug 'maxbrunsfeld/vim-yankstack'
+" note: disabled temporarily since it overwrites 'gg'
+" Plug 'maxbrunsfeld/vim-yankstack'
+" to test:
+" https://github.com/bfredl/nvim-miniyank
+" https://github.com/machakann/vim-highlightedyank
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -53,6 +58,9 @@ Plug 'gregsexton/MatchTag'
 " vim-javascript: Javascript improvements
 Plug 'pangloss/vim-javascript'
 
+" ReactJS support
+Plug 'mxw/vim-jsx'
+
 " Syntax for JavaScript libraries
 " Plug 'othree/javascript-libraries-syntax.vim'
 
@@ -76,7 +84,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 
 " Show a diff via Vim sign column
-Plug 'mhinz/vim-signify', {'on': 'SignifyToggle'}
+Plug 'mhinz/vim-signify', { 'on': 'SignifyToggle' }
 
 " vim-repeat: Repeating support for plugins
 Plug 'tpope/vim-repeat'
@@ -85,7 +93,7 @@ Plug 'tpope/vim-repeat'
 Plug 'michaeljsmith/vim-indent-object'
 
 " terminalkeys.vim: Terminal Keys settings
-Plug 'nacitar/terminalkeys.vim'
+" Plug 'nacitar/terminalkeys.vim'
 
 " vim-virtualenv: Virtualenv support
 Plug 'jmcantrell/vim-virtualenv'
@@ -94,13 +102,11 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'sjl/gundo.vim'
 
 " ZoomWin: Toggle window zoom
-Plug 'dr-chip-vim-scripts/ZoomWin'
+" Plug 'dr-chip-vim-scripts/ZoomWin'
+Plug 'troydm/zoomwintab.vim'
 
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
-
-" vim-debug: Debugger
-Plug 'jabapyth/vim-debug'
 
 " vim-python-pep8-indent: Python pep8 indent
 Plug 'hynek/vim-python-pep8-indent'
@@ -109,7 +115,9 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'benmills/vimux'
 
 " BuildYCM function defined on custom/before/youcompleteme.vim
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
@@ -120,8 +128,8 @@ Plug 'mileszs/ack.vim'
 " Colorscheme for gvim
 Plug 'Wombat'
 
-Plug 'fisadev/fisa-vim-colorscheme'
-Plug 'freeo/vim-kalisi'
+" Plug 'fisadev/fisa-vim-colorscheme'
+" Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
 
 Plug 'peterhoeg/vim-qml'
@@ -131,7 +139,7 @@ call plug#end()
 
 function s:after()
     " This code sources all the vim files stored in custom/after
-    for f in split(glob('~/.vim/custom/after/*.vim'), '\n')
+    for f in split(glob('~/.config/nvim/custom/after/*.vim'), '\n')
         exe 'source' f
     endfor
 endfunction
