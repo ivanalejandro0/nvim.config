@@ -118,6 +118,7 @@ Plug 'benmills/vimux'
 " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'zchee/deoplete-jedi'
 
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
