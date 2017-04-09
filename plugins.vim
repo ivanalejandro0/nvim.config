@@ -102,7 +102,8 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'sjl/gundo.vim'
 
 " ZoomWin: Toggle window zoom
-Plug 'dr-chip-vim-scripts/ZoomWin'
+" Plug 'dr-chip-vim-scripts/ZoomWin'
+Plug 'troydm/zoomwintab.vim'
 
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
