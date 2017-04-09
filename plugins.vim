@@ -23,7 +23,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 
 " TagBar: Class browser
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " Store and cycle through yanked text strings.
 " note: this needs to be loaded before 'surround' since overrides 'S' key mapping
@@ -84,7 +84,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 
 " Show a diff via Vim sign column
-Plug 'mhinz/vim-signify', {'on': 'SignifyToggle'}
+Plug 'mhinz/vim-signify', { 'on': 'SignifyToggle' }
 
 " vim-repeat: Repeating support for plugins
 Plug 'tpope/vim-repeat'
