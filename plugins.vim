@@ -113,7 +113,9 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'benmills/vimux'
 
 " BuildYCM function defined on custom/before/youcompleteme.vim
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
