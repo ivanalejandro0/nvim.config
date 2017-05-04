@@ -42,10 +42,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " CtrlP plugin: Filetype finder and setter.
 Plug 'endel/ctrlp-filetype.vim'
 
-" Matchit: Extended match plugin
-" http://www.vim.org/scripts/script.php?script_id=39
-Plug 'matchit.zip'
-
 " The ultimate snippet solution for Vim
 Plug 'SirVer/ultisnips'
 
@@ -125,9 +121,6 @@ Plug 'ekalinin/Dockerfile.vim'
 
 " ack/ag integration
 Plug 'mileszs/ack.vim'
-
-" Colorscheme for gvim
-Plug 'Wombat'
 
 " Plug 'fisadev/fisa-vim-colorscheme'
 " Plug 'freeo/vim-kalisi'
