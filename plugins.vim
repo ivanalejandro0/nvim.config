@@ -37,10 +37,14 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 
 " CtrlP plugin: Filetype finder and setter.
-Plug 'endel/ctrlp-filetype.vim'
+" Plug 'endel/ctrlp-filetype.vim'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 
 " The ultimate snippet solution for Vim
 Plug 'SirVer/ultisnips'
@@ -115,6 +119,9 @@ Plug 'benmills/vimux'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-jedi'
+
+" Needs: `go get -u github.com/nsf/gocode`
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " Dockerfile suppoer
 Plug 'ekalinin/Dockerfile.vim'
