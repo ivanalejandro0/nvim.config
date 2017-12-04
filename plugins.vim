@@ -65,6 +65,9 @@ Plug 'peterhoeg/vim-qml'
 Plug 'posva/vim-vue'
 Plug 'stephpy/vim-yaml'
 
+Plug 'jparise/vim-graphql'
+" watch out: https://github.com/sheerun/vim-polyglot/issues/236
+
 " auto-pairs: Autoclose feature
 Plug 'jiangmiao/auto-pairs'
 
