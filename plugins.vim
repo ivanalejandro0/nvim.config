@@ -55,17 +55,15 @@ Plug 'honza/vim-snippets'
 " MatchTag: Color match html/xml tags
 Plug 'gregsexton/MatchTag'
 
-" vim-javascript: Javascript improvements
-Plug 'pangloss/vim-javascript'
-
-" ReactJS support
+" Add extra filetypes support
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
-
-" Syntax for JavaScript libraries
-" Plug 'othree/javascript-libraries-syntax.vim'
-
-" Angular snippets
-" Plug 'matthewsimo/angular-vim-snippets'
+Plug 'pangloss/vim-javascript'
+Plug 'peterhoeg/vim-qml'
+Plug 'posva/vim-vue'
+Plug 'stephpy/vim-yaml'
 
 " auto-pairs: Autoclose feature
 Plug 'jiangmiao/auto-pairs'
@@ -79,6 +77,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " tabular: Tabular, the text aligner
 Plug 'godlygeek/tabular'
+" consider: https://github.com/junegunn/vim-easy-align
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
@@ -108,9 +107,6 @@ Plug 'troydm/zoomwintab.vim'
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
 
-" vim-python-pep8-indent: Python pep8 indent
-Plug 'hynek/vim-python-pep8-indent'
-
 " vimux: Easy interaction with tmux
 Plug 'benmills/vimux'
 
@@ -123,17 +119,12 @@ Plug 'zchee/deoplete-jedi'
 " Needs: `go get -u github.com/nsf/gocode`
 " Plug 'zchee/deoplete-go', { 'do': 'make'}
 
-" Dockerfile suppoer
-Plug 'ekalinin/Dockerfile.vim'
-
 " ack/ag integration
 Plug 'mileszs/ack.vim'
 
 " Plug 'fisadev/fisa-vim-colorscheme'
 " Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
-
-Plug 'peterhoeg/vim-qml'
 
 call plug#end()
 
