@@ -132,6 +132,7 @@ Plug 'mileszs/ack.vim'
 " Plug 'fisadev/fisa-vim-colorscheme'
 " Plug 'freeo/vim-kalisi'
 Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
