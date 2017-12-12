@@ -48,4 +48,4 @@ if !exists('g:command_scratch') && set_default_command
     let g:command_scratch = "cal -3 -h; echo; date"
 endif
 
-nnoremap <leader>R :call RunCommand()<CR>
+nnoremap <leader>R :call RunCommand()<CR><C-w><C-w>
