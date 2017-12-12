@@ -102,7 +102,8 @@ endif
 
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
-set wildmode=list:longest
+set wildmenu
+set wildmode=list:full
 
 set termguicolors
 
