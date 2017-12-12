@@ -124,7 +124,7 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-jedi'
 
 " Needs: `go get -u github.com/nsf/gocode`
-" Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " ack/ag integration
 Plug 'mileszs/ack.vim'
