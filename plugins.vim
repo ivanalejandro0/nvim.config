@@ -83,6 +83,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'godlygeek/tabular'
 " consider: https://github.com/junegunn/vim-easy-align
 
+" A better :join
+" Plug "sk1418/Join"
+
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 
