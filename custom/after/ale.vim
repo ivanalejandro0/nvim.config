@@ -11,3 +11,7 @@ nnoremap <C-k> :ALEPreviousWrap<Return>
 nnoremap <C-j> :ALENextWrap<Return>
 " nnoremap <silent> <C-k> :ALEPreviousWrap<Return>
 " nnoremap <silent> <C-j> :ALENextWrap<Return>
+
+let g:ale_linters = {
+\   'go': ['go fmt', 'golint' , 'go vet', 'go build'],
+\}
