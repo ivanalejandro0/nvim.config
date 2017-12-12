@@ -1,3 +1,7 @@
+" https://github.com/neovim/neovim/issues/6403
+" letter 'q' appearing all over the console and even outside nvim on tmux
+set guicursor=
+
 " add all the plugins
 if filereadable(expand("~/.config/nvim/plugins.vim"))
   source ~/.config/nvim/plugins.vim
