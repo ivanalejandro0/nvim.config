@@ -107,12 +107,12 @@ set wildmode=list:full
 
 set termguicolors
 
+set inccommand=nosplit
+
 " Color schemes {
     " use 256 colors when possible
     if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
         let &t_Co = 256
-        " colorscheme fisa
-        " colorscheme kalisi
         colorscheme jellybeans
     else
         colorscheme delek
