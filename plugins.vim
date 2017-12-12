@@ -31,7 +31,8 @@ Plug 'w0rp/ale'
 " Plug 'maxbrunsfeld/vim-yankstack'
 " to test:
 " https://github.com/bfredl/nvim-miniyank
-" https://github.com/machakann/vim-highlightedyank
+
+Plug 'machakann/vim-highlightedyank'
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
