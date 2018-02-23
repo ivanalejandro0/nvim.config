@@ -107,9 +107,8 @@ Plug 'jmcantrell/vim-virtualenv'
 " gundo: Graph vim undo history
 Plug 'sjl/gundo.vim'
 
-" ZoomWin: Toggle window zoom
-" Plug 'dr-chip-vim-scripts/ZoomWin'
-Plug 'troydm/zoomwintab.vim'
+" Toggle window zoom
+Plug 'szw/vim-maximizer'
 
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
