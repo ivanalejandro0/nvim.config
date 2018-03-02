@@ -109,6 +109,8 @@ set termguicolors
 
 set inccommand=nosplit
 
+set mouse=nv
+
 " Color schemes {
     " use 256 colors when possible
     if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
