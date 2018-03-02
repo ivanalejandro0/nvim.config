@@ -54,7 +54,12 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " MatchTag: Color match html/xml tags
+" NeoVim has included the functionality for % html/xml tags, but this
+" colorizes when over the tag
 Plug 'gregsexton/MatchTag'
+
+" Consider this. Always highlights
+" https://github.com/Valloric/MatchTagAlways
 
 " Add extra filetypes support
 Plug 'ekalinin/Dockerfile.vim'
@@ -68,6 +73,8 @@ Plug 'stephpy/vim-yaml'
 
 Plug 'jparise/vim-graphql'
 " watch out: https://github.com/sheerun/vim-polyglot/issues/236
+
+Plug 'chrisbra/Colorizer'
 
 " auto-pairs: Autoclose feature
 Plug 'jiangmiao/auto-pairs'
@@ -85,6 +92,9 @@ Plug 'godlygeek/tabular'
 
 " A better :join
 " Plug "sk1418/Join"
+
+" Auto save documents on change, useful for quick notes
+Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' }
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
