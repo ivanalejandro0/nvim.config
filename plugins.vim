@@ -120,6 +120,9 @@ Plug 'sjl/gundo.vim'
 " Toggle window zoom
 Plug 'szw/vim-maximizer'
 
+" physics-based smooth scrolling
+" Plug 'yuttie/comfortable-motion.vim'
+
 " vim-scratch: Scratch buffer
 Plug 'ivanalejandro0/vim-scratch'
 
