@@ -70,6 +70,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'peterhoeg/vim-qml'
 Plug 'posva/vim-vue'
 Plug 'stephpy/vim-yaml'
+Plug 'tpope/vim-markdown'
 
 Plug 'jparise/vim-graphql'
 " watch out: https://github.com/sheerun/vim-polyglot/issues/236
