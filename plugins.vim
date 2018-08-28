@@ -136,8 +136,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-jedi'
 
-" Needs: `go get -u github.com/nsf/gocode`
-Plug 'zchee/deoplete-go', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+" Needs: `go get -u github.com/mdempsky/gocode`
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " ack/ag integration
 Plug 'mileszs/ack.vim'
