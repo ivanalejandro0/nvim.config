@@ -75,6 +75,7 @@ endif
     set tabstop=8      " real tabs should be 8, and they will show with
                        " set list on
     set breakindent
+    set linebreak
     set showbreak=\\\\\
 
     filetype plugin indent on " load filetype plugins/indent settings
