@@ -136,6 +136,7 @@ Plug 'benmills/vimux'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-jedi'
+Plug 'sebastianmarkow/deoplete-rust'
 
 " Needs: `go get -u github.com/mdempsky/gocode`
 Plug 'zchee/deoplete-go', { 'do': 'make'}
