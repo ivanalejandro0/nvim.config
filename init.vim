@@ -33,7 +33,8 @@ endif
     set backupdir=~/.config/nvim/dirs/backups " where to put backup files
     set undofile                      " persistent undos - undo after you re-open the file
     set undodir=~/.config/nvim/dirs/undos
-    set viminfo+=n~/.config/nvim/dirs/viminfo
+    " set viminfo+=n~/.config/nvim/dirs/viminfo
+    set shada+='1000,n~/.config/nvim/dirs/shada
 
     " Create needed directories if they don't exist
     if !isdirectory(&backupdir)
