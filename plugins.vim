@@ -148,6 +148,8 @@ Plug 'mileszs/ack.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
 
+Plug 'haya14busa/vim-asterisk'
+
 call plug#end()
 
 
