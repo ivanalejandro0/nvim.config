@@ -1,4 +1,6 @@
-if executable('ag')
+if executable('fd --type file')
+    let $FZF_DEFAULT_COMMAND = 'fd'
+elseif executable('ag')
     let $FZF_DEFAULT_COMMAND = 'ag --skip-vcs-ignores -g ""'
 endif
 
