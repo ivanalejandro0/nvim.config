@@ -72,6 +72,7 @@ Plug 'posva/vim-vue'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 Plug 'leafgarland/typescript-vim'
+Plug 'cespare/vim-toml'
 
 Plug 'jparise/vim-graphql'
 " watch out: https://github.com/sheerun/vim-polyglot/issues/236
