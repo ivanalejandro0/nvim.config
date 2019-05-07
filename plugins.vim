@@ -77,6 +77,9 @@ Plug 'cespare/vim-toml'
 Plug 'jparise/vim-graphql'
 " watch out: https://github.com/sheerun/vim-polyglot/issues/236
 
+" Styled-components: syntax highlighting for CSS in JS template strings.
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 Plug 'chrisbra/Colorizer'
 
 " auto-pairs: Autoclose feature
