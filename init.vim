@@ -14,6 +14,9 @@ endif
 
     " set termguicolors
 
+    " https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+    set nomodeline
+
     " A buffer becomes hidden when it is abandoned
     set hidden
 
