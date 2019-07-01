@@ -55,6 +55,9 @@ endif
 
     " timeout settings to avoid delay switching modes
     set timeoutlen=1000 ttimeoutlen=0
+
+    " when switching to a buffer, reuse open tab if possible
+    set switchbuf=usetab,newtab
 " }
 
 " Text Formatting/Layout {

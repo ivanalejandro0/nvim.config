@@ -5,6 +5,7 @@ elseif executable('ag')
 endif
 
 " [Buffers] Jump to the existing window if possible
+" you may want to use this along with: set switchbuf=usetab
 let g:fzf_buffers_jump = 1
 
 nnoremap ,e :Files<CR>
