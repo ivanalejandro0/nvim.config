@@ -1,8 +1,4 @@
-" from: https://github.com/racer-rust/racer
-" $ rustup toolchain add nightly
-" $ cargo +nightly install racer
-" $ rustup component add rust-src
-
+" NOTE: this plugin requires `racer`, check `./install-racer.sh`
 " from: https://github.com/sebastianmarkow/deoplete-rust
 
 " Using systemlist instead of system to trim \n
