@@ -122,7 +122,8 @@ Plug 'michaeljsmith/vim-indent-object'
 " Plug 'plytophogy/vim-virtualenv'
 
 " gundo: Graph vim undo history
-Plug 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
+" Plug 'simnalamburt/vim-mundo'
 
 " Toggle window zoom
 Plug 'szw/vim-maximizer'
@@ -151,6 +152,7 @@ Plug 'mileszs/ack.vim'
 
 " Plug 'fisadev/fisa-vim-colorscheme'
 " Plug 'freeo/vim-kalisi'
+" Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
 
