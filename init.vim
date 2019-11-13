@@ -1,3 +1,11 @@
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+" Disable modeline because of its security issues
+set nomodeline
+
 " https://github.com/neovim/neovim/issues/6403
 " letter 'q' appearing all over the console and even outside nvim on tmux
 set guicursor=
@@ -8,21 +16,13 @@ if filereadable(expand("~/.config/nvim/plugins.vim"))
 endif
 
 " General settings {
-    " Use Vim settings, rather then Vi settings (much better!).
-    " This must be first, because it changes other options as a side effect.
-    set nocompatible
-
-    " set termguicolors
-
-    " https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
-    set nomodeline
 
     " A buffer becomes hidden when it is abandoned
     set hidden
 
     set encoding=utf-8
     syntax on " syntax highlighting on
-    setlocal spelllang=es " en
+    setlocal spelllang=en
 
     " == Scrolling ==
     set scrolloff=3  " Start scrolling when we're 3 lines away from margins
@@ -38,6 +38,7 @@ endif
     set undodir=~/.config/nvim/dirs/undos
     " set viminfo+=n~/.config/nvim/dirs/viminfo
     set shada+='1000,n~/.config/nvim/dirs/shada
+    set shadafile="~/.config/nvim/dirs/shada"
 
     " Create needed directories if they don't exist
     if !isdirectory(&backupdir)
@@ -129,10 +130,10 @@ set mouse=nv
     endif
 
     " colors for gvim
-    if has('gui_running')
-        " colorscheme wombat
-        colorscheme jellybeans
-        set guioptions-=T
-        " set guifont=Droid\ Sans\ Mono\ 12
-    endif
+    " if has('gui_running')
+    "     " colorscheme wombat
+    "     colorscheme jellybeans
+    "     set guioptions-=T
+    "     " set guifont=Droid\ Sans\ Mono\ 12
+    " endif
 " }
