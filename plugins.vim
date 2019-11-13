@@ -118,7 +118,8 @@ Plug 'michaeljsmith/vim-indent-object'
 " Plug 'nacitar/terminalkeys.vim'
 
 " vim-virtualenv: Virtualenv support
-Plug 'jmcantrell/vim-virtualenv'
+" Plug 'jmcantrell/vim-virtualenv'
+" Plug 'plytophogy/vim-virtualenv'
 
 " gundo: Graph vim undo history
 Plug 'sjl/gundo.vim'
