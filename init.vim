@@ -111,8 +111,11 @@ endif
 
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
-set wildmenu
-set wildmode=list:full
+" set wildmenu
+" set wildmode=list:full
+" set wildmode="full"
+set wildoptions=pum
+set pumblend=20
 
 set termguicolors
 
