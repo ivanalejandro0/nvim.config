@@ -115,7 +115,7 @@ endif
 " set wildmode=list:full
 " set wildmode="full"
 set wildoptions=pum
-set pumblend=20
+" set pumblend=80
 
 set termguicolors
 
