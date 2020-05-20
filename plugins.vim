@@ -20,7 +20,7 @@ Plug 'tomtom/tcomment_vim'
 
 " Neomake: async syntax checker
 " Plug 'benekastah/neomake'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " TagBar: Class browser
 " Plug 'majutsushi/tagbar'
@@ -36,12 +36,6 @@ Plug 'machakann/vim-highlightedyank'
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
-
-" Fuzzy file, buffer, mru, tag, etc finder.
-" Plug 'ctrlpvim/ctrlp.vim'
-
-" CtrlP plugin: Filetype finder and setter.
-" Plug 'endel/ctrlp-filetype.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -71,7 +65,8 @@ Plug 'peterhoeg/vim-qml'
 Plug 'posva/vim-vue'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'cespare/vim-toml'
 
 Plug 'jparise/vim-graphql'
@@ -114,38 +109,20 @@ Plug 'tpope/vim-repeat'
 " vim-indent-object: Indent Text Object
 Plug 'michaeljsmith/vim-indent-object'
 
-" terminalkeys.vim: Terminal Keys settings
-" Plug 'nacitar/terminalkeys.vim'
-
-" vim-virtualenv: Virtualenv support
-" Plug 'jmcantrell/vim-virtualenv'
-" Plug 'plytophogy/vim-virtualenv'
-
-" gundo: Graph vim undo history
-" Plug 'sjl/gundo.vim'
-" Plug 'simnalamburt/vim-mundo'
-
 " Toggle window zoom
 Plug 'szw/vim-maximizer'
 
 " physics-based smooth scrolling
 " Plug 'yuttie/comfortable-motion.vim'
 
-" vim-scratch: Scratch buffer
-Plug 'ivanalejandro0/vim-scratch'
-
 " vimux: Easy interaction with tmux
 Plug 'benmills/vimux'
 
-" BuildYCM function defined on custom/before/youcompleteme.vim
-" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'zchee/deoplete-jedi'
-Plug 'sebastianmarkow/deoplete-rust'
-
-" Needs: `go get -u github.com/mdempsky/gocode`
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 
 " ack/ag integration
 Plug 'mileszs/ack.vim'
@@ -159,7 +136,6 @@ Plug 'w0ng/vim-hybrid'
 Plug 'haya14busa/vim-asterisk'
 
 call plug#end()
-
 
 function s:after()
     " This code sources all the vim files stored in custom/after
