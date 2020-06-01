@@ -37,7 +37,7 @@ Plug 'machakann/vim-highlightedyank'
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 
