@@ -75,6 +75,9 @@ endif
     set incsearch  " incremental search (search as you type)
     set nohlsearch " don't highlight search results
     set nowrapscan " stop searching after reaching first/last occurrence
+
+    " vertical splits opens to the right (default is left)
+    set splitright
 " }
 
 " Indentation {
