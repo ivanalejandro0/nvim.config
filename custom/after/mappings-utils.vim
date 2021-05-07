@@ -34,7 +34,7 @@ function! g:ToggleColorColumn()
   if &colorcolumn != ''
     setlocal colorcolumn&
   else
-    setlocal colorcolumn=80
+    setlocal colorcolumn=80,100
   endif
 endfunction
 
