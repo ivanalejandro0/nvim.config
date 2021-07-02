@@ -18,6 +18,9 @@ Plug 'mattn/emmet-vim'
 " tComment: Code commenter
 Plug 'tomtom/tcomment_vim'
 
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
 " Neomake: async syntax checker
 " Plug 'benekastah/neomake'
 " Plug 'w0rp/ale'
@@ -139,6 +142,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
 
 Plug 'haya14busa/vim-asterisk'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
