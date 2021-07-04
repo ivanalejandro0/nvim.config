@@ -135,6 +135,7 @@ set mouse=nv
     if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
         let &t_Co = 256
         colorscheme jellybeans
+        " colorscheme jellybeans-nvim
     else
         colorscheme delek
     endif

@@ -18,7 +18,9 @@ Plug 'mattn/emmet-vim'
 " tComment: Code commenter
 Plug 'tomtom/tcomment_vim'
 
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " update parsers on update
+Plug 'nvim-treesitter/playground'
+
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Neomake: async syntax checker
@@ -139,6 +141,8 @@ Plug 'mileszs/ack.vim'
 " Plug 'freeo/vim-kalisi'
 " Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+" Plug 'rktjmp/lush.nvim'
+" Plug 'metalelf0/jellybeans-nvim'  " adds treesitter support
 Plug 'w0ng/vim-hybrid'
 
 Plug 'haya14busa/vim-asterisk'
