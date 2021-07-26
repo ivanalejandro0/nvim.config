@@ -18,7 +18,7 @@ Plug 'mattn/emmet-vim'
 " tComment: Code commenter
 Plug 'tomtom/tcomment_vim'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " update parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}  " update parsers on update
 Plug 'nvim-treesitter/playground'
 
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
