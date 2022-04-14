@@ -1,8 +1,8 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- A list of parser names, or "all"
   -- ensure_installed ={ "javascript", "json", "css", "html", "python", "bash", "regex", "yaml", "jsonc", "tsx", "lua" },
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all",
   context_commentstring = {
     enable = true,
 
