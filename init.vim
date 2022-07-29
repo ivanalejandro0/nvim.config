@@ -103,26 +103,7 @@ endif
     set foldlevel=1       " this is just what i use
 " }
 
-" Status line { (from https://github.com/swaroopch/dotvim/blob/master/vimrc)
-    " set laststatus=2                             " always show the status line
-    " set statusline=
-    " set statusline+=%-3.3n\                      " buffer number
-    " set statusline+=%f\                          " filename
-    " set statusline+=%h%m%r%w                     " status flags
-    " set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-    " set statusline+=%=                           " right align remainder
-    " set statusline+=0x%-8B                       " character value
-    " set statusline+=%-14(%l,%c%V%)               " line, character
-    " set statusline+=%<%P                         " file position
-" }
-
-" autocompletion of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-" set wildmenu
-" set wildmode=list:full
-" set wildmode="full"
 set wildoptions=pum
-" set pumblend=80
 
 set termguicolors
 
@@ -131,20 +112,19 @@ set inccommand=nosplit
 set mouse=nv
 
 " Color schemes {
-    " use 256 colors when possible
-    if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
-        let &t_Co = 256
-        colorscheme jellybeans
-        " colorscheme jellybeans-nvim
-    else
-        colorscheme delek
-    endif
+" use 256 colors when possible
+if &term =~? 'mlterm\|xterm\|xterm-256color\|screen-256\|nvim'
+    let &t_Co = 256
+    " colorscheme jellybeans
+lua << EOF
+require('kanagawa').setup({
+    transparent = true,  -- default: false
+    -- dimInactive = false,  -- dim inactive window `:h hl-NormalNC`
+})
 
-    " colors for gvim
-    " if has('gui_running')
-    "     " colorscheme wombat
-    "     colorscheme jellybeans
-    "     set guioptions-=T
-    "     " set guifont=Droid\ Sans\ Mono\ 12
-    " endif
-" }
+-- setup must be called before loading
+vim.cmd("colorscheme kanagawa")
+EOF
+else
+    colorscheme delek
+endif

@@ -137,13 +137,8 @@ Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 " ack/ag integration
 Plug 'mileszs/ack.vim'
 
-" Plug 'fisadev/fisa-vim-colorscheme'
-" Plug 'freeo/vim-kalisi'
-" Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-" Plug 'rktjmp/lush.nvim'
-" Plug 'metalelf0/jellybeans-nvim'  " adds treesitter support
-Plug 'w0ng/vim-hybrid'
+Plug 'rebelot/kanagawa.nvim'
 
 Plug 'haya14busa/vim-asterisk'
 
