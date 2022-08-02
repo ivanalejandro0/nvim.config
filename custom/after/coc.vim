@@ -48,6 +48,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader>r <Plug>(coc-rename)
 
+nmap <leader>ca  <Plug>(coc-codeaction)
+
 imap <C-e> <Plug>(coc-snippets-expand)
 
 " from https://github.com/neoclide/coc.nvim#example-vim-configuration
