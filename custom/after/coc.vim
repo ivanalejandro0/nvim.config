@@ -26,8 +26,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " " Make <CR> to accept selected completion item or notify coc.nvim to format
 " " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -37,6 +37,25 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " else
 "   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
+
+" Space confirms autocomplete
+" https://github.com/qazwini/dotfiles/blob/467b60a48197646dac0ffc2f03f87f21b61193f7/.vimrc
+" Original https://www.reddit.com/r/vim/comments/numbf7/how_can_i_disable_autoselectandcomplete_for_coc/
+" function! s:EnterSelect()
+"     " If the popup is visible and an option is not selected
+"     if pumvisible() && complete_info()["selected"] == -1
+"         return "\<C-y>\<CR>"
+"
+"     " If the pum is visible and an option is selected
+"     elseif pumvisible()
+"         return coc#pum#confirm()
+"
+"     " If the pum is not visible
+"     else
+"         return "\<C-g>u\<CR>"
+"     endif
+" endfunction
+" inoremap <expr> <cr> <SID>EnterSelect()
 
 nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
 nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
