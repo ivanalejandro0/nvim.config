@@ -1,7 +1,5 @@
 if executable('fd')
-    let $FZF_DEFAULT_COMMAND = 'fd --type file'
-elseif executable('ag')
-    let $FZF_DEFAULT_COMMAND = 'ag --skip-vcs-ignores -g ""'
+    let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --exclude .git/'
 endif
 
 " [Buffers] Jump to the existing window if possible
