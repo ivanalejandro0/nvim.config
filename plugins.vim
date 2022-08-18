@@ -23,13 +23,6 @@ Plug 'nvim-treesitter/playground'
 
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
-" Neomake: async syntax checker
-" Plug 'benekastah/neomake'
-" Plug 'w0rp/ale'
-
-" TagBar: Class browser
-" Plug 'majutsushi/tagbar'
-
 " Store and cycle through yanked text strings.
 " note: this needs to be loaded before 'surround' since overrides 'S' key mapping
 " note: disabled temporarily since it overwrites 'gg'
@@ -100,7 +93,7 @@ Plug 'godlygeek/tabular'
 " Plug "sk1418/Join"
 
 " Auto save documents on change, useful for quick notes
-Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' }
+" Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' }
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
@@ -120,9 +113,6 @@ Plug 'szw/vim-maximizer'
 " physics-based smooth scrolling
 " Plug 'yuttie/comfortable-motion.vim'
 
-" vimux: Easy interaction with tmux
-Plug 'benmills/vimux'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
@@ -133,9 +123,6 @@ Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 " needs:
 " $ rustup component add rls rust-analysis rust-src
 Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-
-" ack/ag integration
-Plug 'mileszs/ack.vim'
 
 Plug 'nanotech/jellybeans.vim'
 Plug 'rebelot/kanagawa.nvim'
