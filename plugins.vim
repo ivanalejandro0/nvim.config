@@ -16,7 +16,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
 
 " tComment: Code commenter
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary/'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " update parsers on update
 Plug 'nvim-treesitter/playground'
