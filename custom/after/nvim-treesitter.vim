@@ -1,10 +1,33 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all"
-  -- ensure_installed ={ "javascript", "json", "css", "html", "python", "bash", "regex", "yaml", "jsonc", "tsx", "lua" },
-  ensure_installed = "all",
-  context_commentstring = {
-    enable = true,
+    -- A list of parser names, or "all"
+    ensure_installed = {
+        "bash",
+        "comment",
+        "css",
+        "diff",
+        "dockerfile",
+        "dot",
+        "html",
+        "javascript",
+        "json",
+        "jsonc",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "regex",
+        "rust",
+        "scss",
+        "toml",
+        "tsx",
+        "typescript",
+        "yaml",
+    },
+    -- ensure_installed = "all",
+    context_commentstring = {
+        enable = true,
 
     -- attempts to properly set the commentstring value for graphql injected language
     -- commentstrings is properly set on '*.graphql' files
