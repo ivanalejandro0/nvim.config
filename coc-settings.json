@@ -1,5 +1,8 @@
 {
     "coc.preferences.jumpCommand": "tab drop",
     "eslint.nodePath": "./node_modules",
-    "suggest.noselect": true
+    "suggest.noselect": true,
+
+    /* neoclide/coc-tsserver uses ts 4.x and this is needed for projects using ts 5.x */
+    "tsserver.useLocalTsdk": true
 }
