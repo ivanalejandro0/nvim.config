@@ -54,7 +54,6 @@ Plug 'gregsexton/MatchTag'
 " Add extra filetypes support
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'keith/tmux.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'peterhoeg/vim-qml'
