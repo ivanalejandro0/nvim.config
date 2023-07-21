@@ -9,9 +9,6 @@ endfor
 
 call plug#begin('~/.config/nvim/plugged')
 
-" NERD tree will be loaded on the first invocation of NERDTreeToggle command
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
 " Emmet/ZenCoding: Magical way to code html
 Plug 'mattn/emmet-vim'
 
