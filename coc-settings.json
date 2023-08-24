@@ -4,5 +4,8 @@
     "suggest.noselect": true,
 
     /* neoclide/coc-tsserver uses ts 4.x and this is needed for projects using ts 5.x */
-    "tsserver.useLocalTsdk": true
+    "tsserver.useLocalTsdk": true,
+
+    "python.formatting.provider": "black",
+    "python.pythonPath": "python3",
 }
