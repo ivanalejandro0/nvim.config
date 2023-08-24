@@ -14,7 +14,7 @@ Plug 'mattn/emmet-vim'
 
 " tComment: Code commenter
 " Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-commentary/'
+Plug 'tpope/vim-commentary'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " update parsers on update
 Plug 'nvim-treesitter/playground'
@@ -68,8 +68,10 @@ Plug 'jparise/vim-graphql'
 " watch out: https://github.com/sheerun/vim-polyglot/issues/236
 
 " Styled-components: syntax highlighting for CSS in JS template strings.
+" Unmaintained, see github repo
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+" A plugin to color colornames and codes
 Plug 'chrisbra/Colorizer'
 
 " auto-pairs: Autoclose feature
