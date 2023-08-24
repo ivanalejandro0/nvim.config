@@ -12,8 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Emmet/ZenCoding: Magical way to code html
 Plug 'mattn/emmet-vim'
 
-" tComment: Code commenter
-" Plug 'tomtom/tcomment_vim'
+" Code commenter
 Plug 'tpope/vim-commentary'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " update parsers on update
@@ -53,14 +52,11 @@ Plug 'gregsexton/MatchTag'
 
 " Add extra filetypes support
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'peterhoeg/vim-qml', { 'for': 'qml' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'stephpy/vim-yaml'
-Plug 'tpope/vim-markdown'
-" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'cespare/vim-toml'
 
@@ -73,9 +69,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " A plugin to color colornames and codes
 Plug 'chrisbra/Colorizer'
-
-" auto-pairs: Autoclose feature
-Plug 'jiangmiao/auto-pairs'
 
 " misc helper mappings
 Plug 'tpope/vim-unimpaired'
@@ -123,7 +116,6 @@ Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 " $ rustup component add rls rust-analysis rust-src
 Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'nanotech/jellybeans.vim'
 Plug 'rebelot/kanagawa.nvim'
 
 Plug 'haya14busa/vim-asterisk'
