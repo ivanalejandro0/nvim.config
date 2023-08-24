@@ -1,3 +1,4 @@
+" configs for 'haya14busa/vim-asterisk'
 map *   <Plug>(asterisk-*)
 map #   <Plug>(asterisk-#)
 map g*  <Plug>(asterisk-g*)
