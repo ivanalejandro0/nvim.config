@@ -54,8 +54,8 @@ Plug 'gregsexton/MatchTag'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
-Plug 'peterhoeg/vim-qml', { 'for': 'qml' }
-Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'peterhoeg/vim-qml'
+Plug 'posva/vim-vue'
 Plug 'stephpy/vim-yaml'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'cespare/vim-toml'
