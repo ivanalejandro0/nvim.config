@@ -56,8 +56,8 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
-Plug 'peterhoeg/vim-qml'
-Plug 'posva/vim-vue'
+Plug 'peterhoeg/vim-qml', { 'for': 'qml' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 " Plug 'leafgarland/typescript-vim'
@@ -128,7 +128,7 @@ Plug 'rebelot/kanagawa.nvim'
 
 Plug 'haya14busa/vim-asterisk'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'on': ['MarkdownPreview', 'MarkdownPreviewStop', 'MarkdownPreviewToggle'] }
 
 call plug#end()
 
