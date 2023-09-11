@@ -4,6 +4,7 @@
 -- move forward one character
 -- silent! inoremap <C-f> <C-o>l
 -- silent! inoremap <C-f> <Right>
+vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move forward one character" })
 
 -- move to the end of line
 -- silent! inoremap <C-e> <C-o>$
