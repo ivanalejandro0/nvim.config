@@ -9,6 +9,7 @@ return {
     treesitter.setup({
       -- A list of parser names, or "all"
       ensure_installed = {
+        "astro",
         "bash",
         "comment",
         "css",
