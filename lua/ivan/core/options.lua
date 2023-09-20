@@ -69,8 +69,11 @@ vim.opt.softtabstop = 2   -- when hitting tab or backspace, how many spaces shou
 vim.opt.tabstop = 8       -- real tabs show as 8, and they will show with vim.opt.list on
 
 vim.opt.breakindent = true
+-- vim.opt.breakindentopt="shift:2"
 vim.opt.linebreak = true
 vim.opt.showbreak = "\\\\\\"
+-- vim.opt.showbreak = "↳"
+
 
 vim.opt.foldmethod = "indent" -- fold based on indent
 vim.opt.foldnestmax = 10    -- deepest fold is 10 levels
