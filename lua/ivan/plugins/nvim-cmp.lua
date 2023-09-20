@@ -13,6 +13,11 @@ return {
     local cmp = require("cmp")
 
     local luasnip = require("luasnip")
+    luasnip.filetype_extend("typescript", {"javascript"})
+
+    vim.keymap.set({"i", "s"}, "<C-E>", function()
+      luasnip.expand()
+    end, {silent = true})
 
     -- load vs-code like snippets from plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -26,13 +31,13 @@ return {
         end,
       },
 
-      mapping = cmp.mapping.preset.insert({
+      mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+        -- ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -52,7 +57,7 @@ return {
             fallback()
           end
         end, { 'i', 's' }),
-      }),
+      },
 
       sources = cmp.config.sources({
         { name = 'nvim_lsp', keyword_length = 1 },

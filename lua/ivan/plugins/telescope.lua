@@ -46,6 +46,10 @@ return {
     telescope.load_extension("ui-select")
     telescope.load_extension('fzf')
 
+    -- TODO: keep an eye on this:
+    -- https://github.com/nvim-telescope/telescope.nvim/issues/1048
+    -- multi-file opening
+
     -- local buffers = function()
     --   require('telescope.builtin').buffers({ previewer = false })
     -- end
