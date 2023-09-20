@@ -54,9 +54,10 @@ return {
     vim.keymap.set("n", ",b", "<cmd>Telescope buffers previewer=false<cr>", { desc = "Show open buffers" })
 
     vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "[F]uzzy find [k]eymaps" })
+    vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<cr>", { desc = "[F]uzzy find file [t]ypes" })
+    vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "[F]uzzy find [h]elp tags" })
 
-    -- vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "[F]uzzy find [c]olorschemes" })
-    -- vim.keymap.set("n", "<Leader>ft", "<cmd>Telescope filetypes<cr>", { desc = "[F]uzzy find file [t]ypes" })
+    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "[F]uzzy find [c]olorschemes" })
     -- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "[F]uzzy find [f]iles in cwd" })
     -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[F]ind [s]tring in cwd" })
     -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[F]ind string under [c]ursor in cwd" })
