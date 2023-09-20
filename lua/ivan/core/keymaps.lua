@@ -1,13 +1,9 @@
 -- Get rid of Ex mode
 -- nnoremap Q <Nop>
 
--- move forward one character
--- silent! inoremap <C-f> <C-o>l
--- silent! inoremap <C-f> <Right>
 vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move forward one character" })
 
--- move to the end of line
--- silent! inoremap <C-e> <C-o>$
+vim.keymap.set("n", "<Backspace>", "<C-6>", { desc = "Change to alternate file" })
 
 vim.keymap.set("n", "<C-n>", ":tabnew ", { desc = "New tab" })
 
@@ -25,6 +21,6 @@ vim.keymap.set("n", "<leader>a", "ggVG", { desc = "Select all" })
 
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Delete current buffer" })
 
-vim.keymap.set("n", "co8", require("ivan.utils").toggle_colorcolumn)
+vim.keymap.set("n", "co8", require("ivan.utils").toggle_colorcolumn, { desc = "Toggle color columns (80, 100)" })
 
-vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespaces)
+vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespaces, { desc = "Strip trailing whitespaces on the file" })
