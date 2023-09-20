@@ -74,19 +74,17 @@ return {
       end
 
       -- See `:help vim.lsp.*` for documentation on any of the below functions
-      local opts = { buffer = bufnr }
-
       nmap('gd', vim.lsp.buf.definition, "[G]o to [D]efinition")
-      nmap('gD', vim.lsp.buf.declaration)
+      nmap('gD', vim.lsp.buf.declaration, "[G]o to [D]eclaration")
       nmap('K', vim.lsp.buf.hover)
-      nmap('gi', vim.lsp.buf.implementation)
+      nmap('gi', vim.lsp.buf.implementation, "[G]o to [I]mplementation")
       -- nmap('<C-k>', vim.lsp.buf.signature_help)
       -- nmap('<leader>wa', vim.lsp.buf.add_workspace_folder)
       -- nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder)
       -- nmap('<leader>wl', function()
       --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       -- end)
-      nmap('<leader>D', vim.lsp.buf.type_definition)
+      nmap('<leader>D', vim.lsp.buf.type_definition, "Go to type [D]efinition")
       nmap('<leader>r', vim.lsp.buf.rename, "[R]ename")
       -- nmap('gr', vim.lsp.buf.references)
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -94,11 +92,10 @@ return {
 
       -- lua require('telescope.builtin').keymaps()
 
-
       -- nmap('<leader>f', function()
       --   vim.lsp.buf.format { async = true }
       -- end)
-      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, desc = "LSP: [C]ode [A]ction" })
     end
 
     -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
