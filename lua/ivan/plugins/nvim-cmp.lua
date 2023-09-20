@@ -13,7 +13,16 @@ return {
     local cmp = require("cmp")
 
     local luasnip = require("luasnip")
+    local filetype_functions = require("luasnip.extras.filetype_functions")
+    luasnip.setup({
+      ft_func = filetype_functions.from_cursor_pos,
+      -- load_ft_func = filetype_functions.from_cursor_pos,
+      load_ft_func = filetype_functions.extend_load_ft({
+          astro = {"javascript", "typescript", "html"},
+      }),
+    })
     luasnip.filetype_extend("typescript", {"javascript"})
+    -- luasnip.filetype_extend("astro", {"html", "javascript", "typescript"})
 
     vim.keymap.set({"i", "s"}, "<C-E>", function()
       luasnip.expand()
@@ -32,10 +41,14 @@ return {
       },
 
       mapping = {
+        ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
+
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         -- ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
