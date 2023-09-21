@@ -91,6 +91,5 @@ vim.opt.inccommand = "nosplit"
 vim.opt.mouse = "nv"
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- See `:help 'clipboard'`
+vim.opt.clipboard = 'unnamedplus'
