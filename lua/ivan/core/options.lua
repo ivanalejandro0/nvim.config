@@ -28,16 +28,14 @@ vim.opt.backupdir = dirs .. "/backup"
 vim.opt.undofile = true  -- persistent undos - undo after you re-open the file
 vim.opt.undodir = dirs .. "/undo"
 
--- vim.opt.viminfo+=n~/.config/nvim/dirs/viminfo
--- set shada='1000,<50,s100,h
--- set shada+=n~/.config/nvim/dirs/shada
--- vim.opt.shada = "'1000,<50,s100,h" .. "n" .. dirs .. "/shada"
-vim.opt.shada:append("'1000,<50,s100,h")
+-- print(vim.inspect(vim.opt.shada))
+-- vim.opt.shada:append("'1000,<50,s100,h")
 local shada_path = "n" .. dirs .. "/shada"
 vim.opt.shada:append(shada_path)
--- 'shadafile' doesn't seem to be useful to vim.opt.the shada file location and
--- I had to use the 'n' option for 'shada'
--- vim.opt.shadafile="~/.config/nvim/dirs/shada"
+-- see options on https://neovim.io/doc/user/options.html#'shada'
+-- default: !,'100,<50,s10,h
+-- vim.opt.shada = { '!', "'100", '<50', 's100', 'h', shada_path }
+-- print(vim.inspect(vim.opt.shada))
 
 vim.opt.number = true
 vim.opt.cursorline = true
