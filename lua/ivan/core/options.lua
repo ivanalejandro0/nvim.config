@@ -77,11 +77,10 @@ vim.opt.linebreak = true
 vim.opt.showbreak = "\\\\\\"
 -- vim.opt.showbreak = "↳"
 
-
+vim.opt.foldenable = false    -- dont fold by default
 vim.opt.foldmethod = "indent" -- fold based on indent
-vim.opt.foldnestmax = 10    -- deepest fold is 10 levels
-vim.opt.foldenable = false      -- dont fold by default
-vim.opt.foldlevel = 1       -- this is just what i use
+vim.opt.foldnestmax = 10      -- deepest fold is 10 levels
+vim.opt.foldlevel = 1         -- this is just what i use
 
 vim.opt.wildoptions = "pum"
 
