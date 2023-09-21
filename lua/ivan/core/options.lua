@@ -49,7 +49,12 @@ vim.opt.switchbuf = "usetab,newtab"
 
 vim.opt.wrap = false
 vim.opt.list = true
-vim.opt.listchars = "tab:>-,trail:·" -- format for non-printable characters
+vim.opt.listchars = { -- format for non-printable characters
+  tab = ">-",
+  trail = "·",
+  -- extends = "»", precedes = "«",
+}
+
 
 -- Search
 vim.opt.ignorecase = true -- Ignore case when searching...
