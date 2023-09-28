@@ -24,3 +24,5 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Delete current buffer" })
 vim.keymap.set("n", "co8", require("ivan.utils").toggle_colorcolumn, { desc = "Toggle color columns (80, 100)" })
 
 vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespaces, { desc = "Strip trailing whitespaces on the file" })
+
+vim.keymap.set("n", "<leader>b", require("ivan.toggler").toggle_bool)
