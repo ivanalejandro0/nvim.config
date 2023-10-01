@@ -26,3 +26,5 @@ vim.keymap.set("n", "co8", require("ivan.utils").toggle_colorcolumn, { desc = "T
 vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespaces, { desc = "Strip trailing whitespaces on the file" })
 
 vim.keymap.set("n", "<leader>b", require("ivan.toggler").toggle_bool)
+
+vim.keymap.set("n", "<space>g", require("ivan.floating-info").show_file_info)
