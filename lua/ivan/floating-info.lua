@@ -57,6 +57,9 @@ M.show_file_info = function()
     end
   })
 
+  table.insert(info, "") -- new line
+  table.insert(info, "Close this with: " .. table.concat(closingKeys, ", "))
+
   vim.api.nvim_buf_set_text(buf, 0, 0, 0, 0, info)
 
 end
