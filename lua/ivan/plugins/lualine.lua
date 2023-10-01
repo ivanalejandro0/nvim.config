@@ -63,6 +63,8 @@ return {
           local branch_text = t(s)
           if branch_text == "" then return "" end
           return "🐙 " .. t(s)
+          -- return " " .. t(s)
+          -- return "🌱 " .. t(s)
         end },
         'diff',
       },
@@ -82,6 +84,7 @@ return {
     --   lualine_z = {'location'}
     -- },
 
+    -- experiments:
     -- winbar = {
     --   -- lualine_b = {
     --   --   { 'filename', cond = function () return #vim.api.nvim_tabpage_list_wins(0) > 1 end, }
