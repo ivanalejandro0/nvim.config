@@ -1,8 +1,5 @@
 local M = {}
 
--- to reload:
--- :luafile %
-
 local bool_toggler_table = {
   ["true"] = "false",
   ["True"] = "False",
@@ -17,6 +14,8 @@ M.toggle_bool = function()
   vim.cmd("normal! ciw" .. toggled)
 end
 
-vim.keymap.set("n", "<leader>b", M.toggle_bool)
+-- to reload:
+-- :luafile %
+-- vim.keymap.set("n", "<leader>b", M.toggle_bool)
 
 return M
