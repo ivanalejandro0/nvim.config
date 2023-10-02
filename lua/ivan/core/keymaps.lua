@@ -19,12 +19,12 @@ vim.keymap.set("n", "vv", "^vg_", { desc = "Smart line select" })
 
 vim.keymap.set("n", "<leader>a", "ggVG", { desc = "Select all" })
 
-vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Delete current buffer" })
+vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Unload current buffer and delete it from the buffer list (:bd)" })
 
 vim.keymap.set("n", "co8", require("ivan.utils").toggle_colorcolumn, { desc = "Toggle color columns (80, 100)" })
 
 vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespaces, { desc = "Strip trailing whitespaces on the file" })
 
-vim.keymap.set("n", "<leader>b", require("ivan.toggler").toggle_bool)
+vim.keymap.set("n", "<leader>b", require("ivan.toggler").toggle_value, { desc = "Alternate between values (e.g. true/false, on/off)"})
 
-vim.keymap.set("n", "<space>g", require("ivan.floating-info").show_file_info)
+vim.keymap.set("n", "<space>g", require("ivan.floating-info").show_file_info, { desc = "Show file information on a floating window"})

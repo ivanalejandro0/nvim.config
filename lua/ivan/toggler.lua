@@ -1,16 +1,24 @@
 local M = {}
 
-local bool_toggler_table = {
+local toggler_map = {
   ["true"] = "false",
   ["True"] = "False",
   ["TRUE"] = "FALSE",
-}
-vim.tbl_add_reverse_lookup(bool_toggler_table)
 
-M.toggle_bool = function()
+  ["enabled"] = "disabled",
+  ["Enabled"] = "Disabled",
+  ["ENABLED"] = "DISABLED",
+
+  ["on"] = "off",
+  ["On"] = "Off",
+  ["ON"] = "OFF",
+}
+vim.tbl_add_reverse_lookup(toggler_map)
+
+M.toggle_value = function()
   local cword = vim.fn.expand("<cword>")
-  if bool_toggler_table[cword] == nil then return end
-  local toggled = bool_toggler_table[cword]
+  if toggler_map[cword] == nil then return end
+  local toggled = toggler_map[cword]
   vim.cmd("normal! ciw" .. toggled)
 end
 
