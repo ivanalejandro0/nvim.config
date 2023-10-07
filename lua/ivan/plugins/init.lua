@@ -1,7 +1,4 @@
 return {
-  -- "mhinz/vim-signify",
-  -- "lewis6991/gitsigns.nvim",
-
   "michaeljsmith/vim-indent-object",
   "tpope/vim-fugitive",
   "tpope/vim-repeat",
