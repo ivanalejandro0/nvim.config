@@ -62,8 +62,8 @@ return {
           local t=trunc(60, 10, 60, false)
           local branch_text = t(s)
           if branch_text == "" then return "" end
-          return "🐙 " .. t(s)
-          -- return " " .. t(s)
+          return " " .. t(s)
+          -- return "🐙 " .. t(s)
           -- return "🌱 " .. t(s)
         end },
         'diff',
