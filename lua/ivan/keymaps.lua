@@ -28,3 +28,6 @@ vim.keymap.set("n", "<leader>W", require("ivan.utils").strip_trailing_whitespace
 vim.keymap.set("n", "<leader>b", require("ivan.toggler").toggle_value, { desc = "Alternate between values (e.g. true/false, on/off)"})
 
 vim.keymap.set("n", "<space>g", require("ivan.floating-info").show_file_info, { desc = "Show file information on a floating window"})
+
+vim.keymap.set("n", "<A-l>", "5zl", { desc = "Side scroll x5 to right"})
+vim.keymap.set("n", "<A-h>", "5zh", { desc = "Side scroll x5 to left"})
