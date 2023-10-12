@@ -5,7 +5,7 @@ return {
   'pangloss/vim-javascript',
   'HerringtonDarkholme/yats.vim',
   { 'peterhoeg/vim-qml', ft = "qml" },
-  'posva/vim-vue',
+  { 'posva/vim-vue', ft="vue" },
   'stephpy/vim-yaml',
   'cespare/vim-toml',
   'jparise/vim-graphql',
@@ -13,5 +13,5 @@ return {
 
   -- Styled-components: syntax highlighting for CSS in JS template strings.
   -- Unmaintained, see github repo
-  { 'styled-components/vim-styled-components', branch = 'main' },
+  -- { 'styled-components/vim-styled-components', branch = 'main' },
 }
