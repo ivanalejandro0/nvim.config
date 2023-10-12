@@ -1,7 +1,7 @@
 -- https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 -- Disable modeline because of its security issues
--- vim.opt.nomodeline = true
-vim.opt.modeline = false
+-- vim.opt.modeline = false
+-- with the inclusion of 'modelineexpr' now is safe to use modeline
 
 -- https://github.com/neovim/neovim/issues/6403
 -- letter 'q' appearing all over the console and even outside nvim on tmux
