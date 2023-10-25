@@ -8,6 +8,9 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
   config = function()
+    -- TODO: check multi-open mappings,
+    -- https://github.com/nvim-telescope/telescope.nvim/issues/1048#issuecomment-1220846367
+
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local themes = require("telescope.themes")

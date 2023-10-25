@@ -16,6 +16,8 @@ M.show_file_info = function()
     "Line: " .. row .. " Column: " .. col,
     -- "Col 30 of 51; Line 41 of 79; Word 213 of 354; Byte 1716 of 2719",
     "Word " .. wc.cursor_words .. " of " .. wc.words .. "; Byte " .. wc.cursor_bytes .. " of " .. wc.bytes,
+    "",
+    "Char under cursor: " .. vim.api.nvim_command_output('ascii'),
   }
 
   -- Define the size of the floating window
