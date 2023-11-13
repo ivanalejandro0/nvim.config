@@ -22,6 +22,10 @@ return {
       }),
     })
     luasnip.filetype_extend("typescript", {"javascript"})
+    luasnip.filetype_extend("javascriptreact", {"javascript", "react"})
+    luasnip.filetype_extend("typescriptreact", {"typescript", "javascript", "react"})
+    luasnip.filetype_extend("jsx", {"javascript", "react"})
+    luasnip.filetype_extend("tsx", {"typescript", "javascript", "react"})
     -- luasnip.filetype_extend("astro", {"html", "javascript", "typescript"})
 
     vim.keymap.set({"i", "s"}, "<C-E>", function()
