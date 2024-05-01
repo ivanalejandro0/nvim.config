@@ -31,6 +31,7 @@ return {
         "toml",
         "tsx",
         "typescript",
+        "vimdoc",
         "yaml",
       },
       -- ensure_installed = "all",
