@@ -1,3 +1,5 @@
+-- consider remove this in favor of 'commentstring' shipped with nvim 0.10
+-- see https://neovim.io/doc/user/various.html#commenting
 return {
   'numToStr/Comment.nvim',
   config = function ()
