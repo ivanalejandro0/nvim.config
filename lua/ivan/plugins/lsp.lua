@@ -24,7 +24,7 @@ return {
       graphql = {},
       html = {},
       pyright = {},
-      tsserver = {},
+      ts_ls = {},
 
       -- rust_analyzer = {
       --   ['rust-analyzer'] = {},
