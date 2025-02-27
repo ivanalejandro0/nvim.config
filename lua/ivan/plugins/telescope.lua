@@ -76,5 +76,11 @@ return {
     vim.keymap.set("n", "<space>h", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find [h]elp tags" })
     vim.keymap.set("n", "<space>c", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "Fuzzy find [c]olorschemes" })
 
+    -- from https://www.youtube.com/watch?v=pJincazaOaw
+    -- vim.keymap.set("n", "<space>s", function()
+    --   require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
+    -- end, { desc = "Spelling suggestions" })
+
+
   end
 }
