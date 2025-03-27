@@ -13,7 +13,13 @@ local toggler_map = {
   ["On"] = "Off",
   ["ON"] = "OFF",
 }
-vim.tbl_add_reverse_lookup(toggler_map)
+
+-- add reversed values so for every item we can look up by its value
+-- vim.tbl_add_reverse_lookup(toggler_map) -- deprecated
+-- code from https://github.com/neovim/neovim/pull/27639#issuecomment-2132269943
+for _, k in ipairs(vim.tbl_keys(toggler_map)) do
+  toggler_map[toggler_map[k]] = k
+end
 
 M.toggle_value = function()
   local cword = vim.fn.expand("<cword>")
