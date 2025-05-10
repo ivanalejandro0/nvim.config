@@ -8,7 +8,7 @@ return {
     --
     -- This plugin didn't make the change, so LanguageTool 5.9 (that still has
     -- the flag) needs to be used. See https://github.com/rhysd/vim-grammarous/issues/110
-    vim.g["grammarous#jar_url"] = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+    vim.g["grammarous#jar_url"] = 'https://www.languagetool.org/download/archive/LanguageTool-5.9.zip'
 
     -- vim.keymap.set("n", "[g", ":<C-u>call grammarous#info_win#action_previous_error()<CR>")
     -- vim.keymap.set("n", "]g", ":<C-u>call grammarous#info_win#action_next_error()<CR>")
