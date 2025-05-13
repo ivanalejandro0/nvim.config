@@ -1,5 +1,6 @@
 require("ivan.options")
 require("ivan.keymaps")
 require("ivan.lazy")
+require("ivan.python-provider")
 require("ivan.utils")
 require("ivan.logthis")
