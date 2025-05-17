@@ -38,6 +38,8 @@ return {
         },
       },
       pickers = {
+        -- BUG: if you want to jump to a tab where the file is being shown and
+        -- it has unsaved changes there's going to be an error
         buffers = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
         find_files = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
         oldfiles = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
