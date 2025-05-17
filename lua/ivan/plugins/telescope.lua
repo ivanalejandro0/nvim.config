@@ -66,13 +66,23 @@ return {
     -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[F]ind [s]tring in cwd" })
     -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[F]ind string under [c]ursor in cwd" })
 
-    vim.keymap.set("n", "<space>f", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find [f]iles in cwd" })
-    vim.keymap.set("n", "<space>o", "<cmd>Telescope oldfiles previewer=false<cr>", { desc = "Fuzzy find [o]ldfiles" })
-    vim.keymap.set("n", "<space>b", "<cmd>Telescope buffers previewer=false<cr>", { desc = "Fuzzy find open [b]uffers" })
-    vim.keymap.set("n", "<space>k", "<cmd>Telescope keymaps<cr>", { desc = "Fuzzy find [k]eymaps" })
-    vim.keymap.set("n", "<space>t", "<cmd>Telescope filetypes<cr>", { desc = "Fuzzy find file [t]ypes" })
-    vim.keymap.set("n", "<space>h", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find [h]elp tags" })
-    vim.keymap.set("n", "<space>c", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "Fuzzy find [c]olorschemes" })
+    local builtin = require 'telescope.builtin'
+
+    vim.keymap.set("n", "<space>f", builtin.find_files, { desc = "Fuzzy find [f]iles in cwd" })
+    vim.keymap.set("n", "<space>o", function()
+        builtin.oldfiles { previewer = false }
+    end, { desc = "Fuzzy find [o]ldfiles" })
+    vim.keymap.set("n", "<space>b", function()
+        builtin.buffers { previewer = false }
+    end, { desc = "Fuzzy find open [b]uffers" })
+    vim.keymap.set("n", "<space>k", builtin.keymaps, { desc = "Fuzzy find [k]eymaps" })
+    vim.keymap.set("n", "<space>t", builtin.filetypes, { desc = "Fuzzy find file [t]ypes" })
+    vim.keymap.set("n", "<space>h", builtin.help_tags, { desc = "Fuzzy find [h]elp tags" })
+
+    -- vim.keymap.set("n", "<space>c", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "Fuzzy find [c]olorschemes" })
+    vim.keymap.set('n', '<space>c', function()
+        builtin.colorscheme { enable_preview = true }
+    end, { desc = 'Fuzzy find [c]olorschemes' })
 
     -- from https://www.youtube.com/watch?v=pJincazaOaw
     -- vim.keymap.set("n", "<space>s", function()
