@@ -1,7 +1,12 @@
 return {
   'nvim-telescope/telescope.nvim',
+
   -- tag = '0.1.8', -- or
-  branch = '0.1.x',
+  -- branch = '0.1.x',
+  -- Use latest `master` since I need select_tab_drop, not available on
+  -- released version yet, see:
+  -- https://github.com/nvim-telescope/telescope.nvim/issues/2188#issuecomment-2126065354
+
   dependencies = {
     'nvim-lua/plenary.nvim',
     "nvim-telescope/telescope-ui-select.nvim",
@@ -23,10 +28,14 @@ return {
             -- ["<C-/>"] = require('telescope.actions.layout').toggle_preview,
             -- ["<C-_>"] = require('telescope.actions.layout').toggle_preview,
             -- ["<C-?>"] = actions.which_key,
-
-            ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
             -- ["<C-n>"] = require('telescope.actions.layout').cycle_layout_next,
             -- ["<C-p>"] = require('telescope.actions.layout').cycle_layout_prev,
+
+            -- good for buffer switching, but for opening a file first time it
+            -- won't reuse an empty tab, always a new tab. maybe better?
+            ["<CR>"] = actions.select_tab_drop,
+
+            ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
           }
@@ -53,18 +62,6 @@ return {
     -- https://github.com/nvim-telescope/telescope.nvim/issues/1048
     -- multi-file opening
 
-    -- local buffers = function()
-    --   require('telescope.builtin').buffers({ previewer = false })
-    -- end
-    -- vim.keymap.set("n", ",m", buffers, { desc = "Fuzzy find recent files" })
-    -- vim.keymap.set("n", ",m", "<cmd>Telescope oldfiles previewer=false<cr>", { desc = "Fuzzy find recent files" })
-    -- vim.keymap.set("n", ",b", "<cmd>Telescope buffers previewer=false<cr>", { desc = "Show open buffers" })
-    --
-    -- vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "[F]uzzy find [k]eymaps" })
-    -- vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<cr>", { desc = "[F]uzzy find file [t]ypes" })
-    -- vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "[F]uzzy find [h]elp tags" })
-    -- vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "[F]uzzy find [c]olorschemes" })
-    -- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "[F]uzzy find [f]iles in cwd" })
     -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[F]ind [s]tring in cwd" })
     -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[F]ind string under [c]ursor in cwd" })
 
