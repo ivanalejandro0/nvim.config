@@ -31,15 +31,16 @@ return {
             -- ["<C-n>"] = require('telescope.actions.layout').cycle_layout_next,
             -- ["<C-p>"] = require('telescope.actions.layout').cycle_layout_prev,
 
-            -- good for buffer switching, but for opening a file first time it
-            -- won't reuse an empty tab, always a new tab. maybe better?
-            ["<CR>"] = actions.select_tab_drop,
-
             ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
           }
         },
+      },
+      pickers = {
+        buffers = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
+        find_files = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
+        oldfiles = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
       },
       extensions = {
         ["ui-select"] = {
