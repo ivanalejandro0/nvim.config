@@ -5,37 +5,61 @@ return {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     -- "hrsh7th/cmp-nvim-lsp",  -- this is loaded on lspconfig.lua
-    "L3MON4D3/LuaSnip", -- snippet engine
+
+    {
+      -- snippet engine
+      "L3MON4D3/LuaSnip",
+      version = "v2.*",
+      build = (function()  -- borrowed from kickstart.nvim
+        -- Build Step is needed for regex support in snippets.
+        -- This step is not supported in many windows environments.
+        -- Remove the below condition to re-enable on windows.
+        if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+          return
+        end
+        return 'make install_jsregexp'
+      end)(),
+      config = function()
+        local luasnip = require("luasnip")
+        local filetype_functions = require("luasnip.extras.filetype_functions")
+        luasnip.setup({
+          ft_func = filetype_functions.from_cursor_pos,
+          -- load_ft_func = filetype_functions.from_cursor_pos,
+          load_ft_func = filetype_functions.extend_load_ft({
+            astro = {"javascript", "typescript", "html"},
+          }),
+        })
+        luasnip.filetype_extend("typescript", {"javascript"})
+        luasnip.filetype_extend("javascriptreact", {"javascript", "react"})
+        luasnip.filetype_extend("typescriptreact", {"typescript", "javascript", "react"})
+        luasnip.filetype_extend("jsx", {"javascript", "react"})
+        luasnip.filetype_extend("tsx", {"typescript", "javascript", "react"})
+        -- luasnip.filetype_extend("astro", {"html", "javascript", "typescript"})
+
+        vim.keymap.set({"i", "s"}, "<C-E>", function()
+          luasnip.expand()
+        end, {silent = true})
+      end,
+      dependencies = {
+        -- `friendly-snippets` contains a variety of premade snippets.
+        --    See the README about individual language/framework/plugin snippets:
+        --    https://github.com/rafamadriz/friendly-snippets
+        -- "benfowler/telescope-luasnip.nvim",
+        {
+          'rafamadriz/friendly-snippets',
+          config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+          end,
+        },
+      },
+      opts = {},
+    },
+
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
   },
   config = function()
     local cmp = require("cmp")
-
     local luasnip = require("luasnip")
-    local filetype_functions = require("luasnip.extras.filetype_functions")
-    luasnip.setup({
-      ft_func = filetype_functions.from_cursor_pos,
-      -- load_ft_func = filetype_functions.from_cursor_pos,
-      load_ft_func = filetype_functions.extend_load_ft({
-          astro = {"javascript", "typescript", "html"},
-      }),
-    })
-    luasnip.filetype_extend("typescript", {"javascript"})
-    luasnip.filetype_extend("javascriptreact", {"javascript", "react"})
-    luasnip.filetype_extend("typescriptreact", {"typescript", "javascript", "react"})
-    luasnip.filetype_extend("jsx", {"javascript", "react"})
-    luasnip.filetype_extend("tsx", {"typescript", "javascript", "react"})
-    -- luasnip.filetype_extend("astro", {"html", "javascript", "typescript"})
-
-    vim.keymap.set({"i", "s"}, "<C-E>", function()
-      luasnip.expand()
-    end, {silent = true})
-
-    -- load vs-code like snippets from plugins (e.g. friendly-snippets)
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    vim.opt.completeopt = "menu,menuone,noselect"
 
     cmp.setup({
       snippet = {

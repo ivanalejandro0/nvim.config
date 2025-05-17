@@ -21,6 +21,7 @@ vim.opt.sidescroll = 1
 
 vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
+-- vim.fn.stdpath("data") -> ~/.local/share/nvim/
 local dirs = vim.fn.stdpath("data") .. "/dirs"
 vim.opt.directory = dirs .. "/swap"
 vim.opt.backup = true  -- make backup files
@@ -93,3 +94,5 @@ vim.opt.mouse = "nv"
 -- Sync clipboard between OS and Neovim.
 -- See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
+
+vim.opt.completeopt = "menu,menuone,noselect"
