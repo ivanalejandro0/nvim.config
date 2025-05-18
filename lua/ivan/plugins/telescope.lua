@@ -19,18 +19,12 @@ return {
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local themes = require("telescope.themes")
+
     telescope.setup({
       defaults = {
         -- scroll_strategy = "limit",
         mappings = {
           i = {
-            -- these override default: actions.which_key
-            -- ["<C-/>"] = require('telescope.actions.layout').toggle_preview,
-            -- ["<C-_>"] = require('telescope.actions.layout').toggle_preview,
-            -- ["<C-?>"] = actions.which_key,
-            -- ["<C-n>"] = require('telescope.actions.layout').cycle_layout_next,
-            -- ["<C-p>"] = require('telescope.actions.layout').cycle_layout_prev,
-
             ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
@@ -38,9 +32,7 @@ return {
         },
       },
       pickers = {
-        -- BUG: if you want to jump to a tab where the file is being shown and
-        -- it has unsaved changes there's going to be an error
-        buffers = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
+        buffers = { mappings = { i = { ["<CR>"] = actions.select_tab } } },
         find_files = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
         oldfiles = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
       },
