@@ -35,6 +35,9 @@ return {
         buffers = { mappings = { i = { ["<CR>"] = actions.select_tab } } },
         find_files = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
         oldfiles = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
+        -- instead of unreleased select_tab_drop, this could be used
+        -- ["<cr>"] = function(bufnr) require("telescope.actions.set").edit(bufnr, "tab drop") end
+        -- from: https://www.reddit.com/r/neovim/comments/xpaqwy/comment/iq4i48k/
       },
       extensions = {
         ["ui-select"] = {
@@ -64,10 +67,10 @@ return {
 
     vim.keymap.set("n", "<space>f", builtin.find_files, { desc = "Fuzzy find [f]iles in cwd" })
     vim.keymap.set("n", "<space>o", function()
-        builtin.oldfiles { previewer = false }
+      builtin.oldfiles { previewer = false }
     end, { desc = "Fuzzy find [o]ldfiles" })
     vim.keymap.set("n", "<space>b", function()
-        builtin.buffers { previewer = false }
+      builtin.buffers { previewer = false }
     end, { desc = "Fuzzy find open [b]uffers" })
     vim.keymap.set("n", "<space>k", builtin.keymaps, { desc = "Fuzzy find [k]eymaps" })
     vim.keymap.set("n", "<space>t", builtin.filetypes, { desc = "Fuzzy find file [t]ypes" })
@@ -75,14 +78,13 @@ return {
 
     -- vim.keymap.set("n", "<space>c", "<cmd>Telescope colorscheme enable_preview=true<cr>", { desc = "Fuzzy find [c]olorschemes" })
     vim.keymap.set('n', '<space>c', function()
-        builtin.colorscheme { enable_preview = true }
+      builtin.colorscheme { enable_preview = true }
     end, { desc = 'Fuzzy find [c]olorschemes' })
 
     -- from https://www.youtube.com/watch?v=pJincazaOaw
     -- vim.keymap.set("n", "<space>s", function()
     --   require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
     -- end, { desc = "Spelling suggestions" })
-
 
   end
 }
