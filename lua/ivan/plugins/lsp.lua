@@ -35,6 +35,9 @@ return {
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
+          runtime = {
+            version = 'LuaJIT',
+          },
           diagnostics = {
             globals = { "vim" }, -- make the language server recognize "vim" global
           },
