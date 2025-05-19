@@ -35,7 +35,7 @@ return {
         buffers = { mappings = { i = { ["<CR>"] = actions.select_tab } } },
         find_files = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
         oldfiles = { mappings = { i = { ["<CR>"] = actions.select_tab_drop } } },
-        -- instead of unreleased select_tab_drop, this could be used
+        -- Note: instead of unreleased select_tab_drop, this could be used
         -- ["<cr>"] = function(bufnr) require("telescope.actions.set").edit(bufnr, "tab drop") end
         -- from: https://www.reddit.com/r/neovim/comments/xpaqwy/comment/iq4i48k/
       },
@@ -70,7 +70,8 @@ return {
       builtin.oldfiles { previewer = false }
     end, { desc = "Fuzzy find [o]ldfiles" })
     vim.keymap.set("n", "<space>b", function()
-      builtin.buffers { previewer = false }
+      -- builtin.buffers { previewer = false }
+      require "ivan.telescope-buffers".buffers()
     end, { desc = "Fuzzy find open [b]uffers" })
     vim.keymap.set("n", "<space>k", builtin.keymaps, { desc = "Fuzzy find [k]eymaps" })
     vim.keymap.set("n", "<space>t", builtin.filetypes, { desc = "Fuzzy find file [t]ypes" })
