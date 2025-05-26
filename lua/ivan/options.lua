@@ -50,7 +50,7 @@ vim.opt.switchbuf = "usetab,newtab"
 
 vim.opt.wrap = false
 vim.opt.list = true
-vim.opt.listchars = { -- format for non-printable characters
+vim.opt.listchars:append { -- format for non-printable characters
   tab = ">-",
   trail = "·",
   -- extends = "»", precedes = "«",
