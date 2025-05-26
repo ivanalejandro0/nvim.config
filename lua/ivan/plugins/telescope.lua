@@ -82,6 +82,21 @@ return {
       builtin.colorscheme { enable_preview = true }
     end, { desc = 'Fuzzy find [c]olorschemes' })
 
+    -- Slightly advanced example of overriding default behavior and theme
+    vim.keymap.set('n', '<space>/', function()
+      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+      builtin.current_buffer_fuzzy_find(
+        require('telescope.themes').get_ivy {
+          previewer = false,
+          layout_config = { height = 15 },
+        }
+      )
+    end, { desc = '[/] Fuzzily search in current buffer' })
+
+    vim.keymap.set("n", "<space>l", function()
+      require 'ivan.telescope-lines'.current_buffer_fuzzy_find()
+    end, { desc = "Fuzzy find [l]ines in current buffer" })
+
     -- from https://www.youtube.com/watch?v=pJincazaOaw
     -- vim.keymap.set("n", "<space>s", function()
     --   require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
