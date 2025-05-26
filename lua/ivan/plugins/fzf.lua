@@ -11,6 +11,9 @@ return {
     -- let g:fzf_buffers_jump = 1
     vim.g.fzf_buffers_jump = 1
 
+    -- down / up / left / right
+    vim.g.fzf_layout = { down = '40%' }
+
     vim.keymap.set("n", ",e", ":Files<CR>", { desc = "Fuzzy find files" })
     -- vim.keymap.set("n", ",f", ":BLines<CR>", { desc = "Fuzzy find buffer lines" })
     -- vim.keymap.set("n", ",b", ":Buffers<CR>", { desc = "Fuzzy find open buffers" })
