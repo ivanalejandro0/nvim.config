@@ -120,6 +120,30 @@ return {
         --  Symbols are things like variables, functions, types, etc.
         map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
 
+        map(',g', function()
+          require('telescope.builtin').lsp_document_symbols {
+            attach_mappings = function(prompt_bufnr, tmap)
+              tmap("i", "<c-f>", function()
+                local action_state = require "telescope.actions.state"
+                local current_prompt = action_state.get_current_line()  --- @type string
+                local is_function = current_prompt:sub(1, (":function:"):len()) == ":function:"
+                -- other filters: variable, object, constant, package, string ...
+                local picker = action_state.get_current_picker(prompt_bufnr)
+                if is_function then
+                  local new_prompt = current_prompt:sub((":function:"):len() + 1, current_prompt:len())
+                  picker:set_prompt(new_prompt, true)
+                else
+                  local new_prompt = ":function:" .. current_prompt
+                  picker:set_prompt(new_prompt, true)
+                end
+                -- print(vim.inspect(picker))
+              end)
+              return true
+            end,
+          }
+        end, 'Open Document Symbols')
+
+
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
         map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
