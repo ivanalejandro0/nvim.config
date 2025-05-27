@@ -14,6 +14,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   vim.api.nvim_notify(message, level, {})
 -- end
 
+local function messages_to_buffer()
+  vim.cmd(":put = execute('messages')")
+end
+vim.api.nvim_create_user_command('MessagesToCurrentBuffer', messages_to_buffer, {})
+
 local M = {}
 
 M.toggle_colorcolumn = function()
