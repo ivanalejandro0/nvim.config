@@ -31,3 +31,6 @@ vim.keymap.set("n", "<space>g", require("ivan.floating-info").show_file_info, { 
 
 vim.keymap.set("n", "<A-l>", "5zl", { desc = "Side scroll x5 to right"})
 vim.keymap.set("n", "<A-h>", "5zh", { desc = "Side scroll x5 to left"})
+
+vim.keymap.set("n", "<C-_><C-_>", "gcc", { desc = "Comment line", remap = true })
+vim.keymap.set("x", "<C-_><C-_>", "gc", { desc = "Comment selection", remap = true })
