@@ -11,6 +11,7 @@ return {
       ensure_installed = {
         "astro",
         "bash",
+        "caddy",
         "comment",
         "css",
         "diff",
