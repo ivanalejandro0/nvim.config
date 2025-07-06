@@ -34,3 +34,11 @@ vim.keymap.set("n", "<A-h>", "5zh", { desc = "Side scroll x5 to left"})
 
 vim.keymap.set("n", "<C-_><C-_>", "gcc", { desc = "Comment line", remap = true })
 vim.keymap.set("x", "<C-_><C-_>", "gc", { desc = "Comment selection", remap = true })
+
+-- Move lines up/down
+-- from https://github.com/radleylewis/nvim-lite/blob/youtube_demo/init.lua
+-- already covered by 'unimpaired' plugin [e ]e
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
