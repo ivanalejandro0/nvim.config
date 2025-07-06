@@ -92,7 +92,11 @@ vim.opt.inccommand = "nosplit"
 vim.opt.mouse = "nv"
 
 -- Sync clipboard between OS and Neovim.
--- See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 vim.opt.completeopt = "menu,menuone,noselect"
