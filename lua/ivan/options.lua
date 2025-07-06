@@ -50,12 +50,12 @@ vim.opt.switchbuf = "usetab,newtab"
 
 vim.opt.wrap = false
 vim.opt.list = true
-vim.opt.listchars:append { -- format for non-printable characters
-  tab = ">-",
+vim.opt.listchars = {
+  tab = "» ",
   trail = "·",
   -- extends = "»", precedes = "«",
+  -- extends = '◀', precedes = '▶',
 }
-
 
 -- Search
 vim.opt.ignorecase = true -- Ignore case when searching...
@@ -66,11 +66,13 @@ vim.opt.wrapscan = false  -- stop searching after reaching first/last occurrence
 
 vim.opt.splitright = true -- vertical splits opens to the right (default is left)
 
+-- TODO: make expandtab filetype dependent, already set for Go on ftplugin/go.lua
 vim.opt.expandtab = true  -- no real tabs please!
 vim.opt.shiftround = true -- when at 3 spaces, and I hit > ... go to 4, not 5
 vim.opt.shiftwidth = 2    -- auto-indent amount when using cindent, >>, << and stuff like that
 vim.opt.softtabstop = 2   -- when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-vim.opt.tabstop = 8       -- real tabs show as 8, and they will show with vim.opt.list on
+-- vim.opt.tabstop = 8       -- real tabs show as 8, and they will show with vim.opt.list on
+vim.opt.tabstop = 4       -- real tabs show as 8, and they will show with vim.opt.list on
 
 vim.opt.breakindent = true
 -- vim.opt.breakindentopt="shift:2"
