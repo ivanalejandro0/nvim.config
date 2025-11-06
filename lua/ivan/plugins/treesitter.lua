@@ -29,6 +29,7 @@ return {
         "regex",
         "rust",
         "scss",
+        "svelte",
         "toml",
         "tsx",
         "typescript",
