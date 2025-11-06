@@ -66,7 +66,9 @@ vim.opt.wrapscan = false  -- stop searching after reaching first/last occurrence
 
 vim.opt.splitright = true -- vertical splits opens to the right (default is left)
 
--- TODO: make expandtab filetype dependent, already set for Go on ftplugin/go.lua
+-- TODO: make expandtab filetype dependent,
+-- already set for Go on ftplugin/go.lua
+-- maybe use vim-sleuth
 vim.opt.expandtab = true  -- no real tabs please!
 vim.opt.shiftround = true -- when at 3 spaces, and I hit > ... go to 4, not 5
 vim.opt.shiftwidth = 2    -- auto-indent amount when using cindent, >>, << and stuff like that
