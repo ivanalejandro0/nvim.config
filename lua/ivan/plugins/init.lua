@@ -1,6 +1,5 @@
 return {
   "michaeljsmith/vim-indent-object",
-  "tpope/vim-fugitive",
   "tpope/vim-repeat",
   "tpope/vim-surround",
 
