@@ -32,11 +32,13 @@ vim.opt.undodir = dirs .. "/undo"
 -- print(vim.inspect(vim.opt.shada))
 -- vim.opt.shada:append("'1000,<50,s100,h")
 local shada_path = "n" .. dirs .. "/shada"
-vim.opt.shada:append(shada_path)
+-- vim.opt.shada:append(shada_path)
 -- see options on https://neovim.io/doc/user/options.html#'shada'
 -- default: !,'100,<50,s10,h
--- vim.opt.shada = { '!', "'100", '<50', 's100', 'h', shada_path }
+vim.opt.shada = { '!', "'1000", '<50', 's100', 'h', shada_path }
 -- print(vim.inspect(vim.opt.shada))
+-- vim.opt.shada:remove("'100")  -- remove default oldfiles length (this seems to fail)
+-- vim.opt.shada:append("'1000")  -- 1000 oldfiles history
 
 vim.opt.number = true
 vim.opt.cursorline = true
