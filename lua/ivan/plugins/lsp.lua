@@ -3,7 +3,6 @@ return {
   dependencies = {
     { 'mason-org/mason.nvim', config = true },
     "mason-org/mason-lspconfig.nvim",
-    "hrsh7th/cmp-nvim-lsp",
     "folke/neodev.nvim",
     -- { "folke/neodev.nvim", opts = {} } -- used below
   },
@@ -57,9 +56,7 @@ return {
     vim.keymap.set('n', '<C-k>', function() vim.diagnostic.jump({ count = -1, float = true, wrap = false }) end)
     vim.keymap.set('n', '<C-j>', function() vim.diagnostic.jump({ count = 1, float = true, wrap = false }) end)
 
-    -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     -- Ensure the servers above are installed
     local mason_lspconfig = require 'mason-lspconfig'
