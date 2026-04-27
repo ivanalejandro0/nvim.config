@@ -1,81 +1,78 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
-  dependencies = { "nvim-treesitter/playground" },
 
   config = function()
-    local treesitter = require("nvim-treesitter.configs")
-    treesitter.setup({
-      -- A list of parser names, or "all"
-      ensure_installed = {
-        "astro",
-        "bash",
-        "caddy",
-        "comment",
-        "css",
-        "diff",
-        "dockerfile",
-        "dot",
-        "html",
-        "javascript",
-        "json",
-        "jsonc",
-        "lua",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "regex",
-        "rust",
-        "scss",
-        "svelte",
-        "toml",
-        "tsx",
-        "typescript",
-        "vimdoc",
-        "yaml",
-      },
-      -- ensure_installed = "all",
-      context_commentstring = {
-        enable = true,
-      },
-      playground = {
-        enable = true,
-        disable = {},
-      },
+    local treesitter = require("nvim-treesitter")
 
-      highlight = {
-        -- `false` will disable the whole extension
-        enable = true,
+    local parsers = {
+      "astro",
+      "bash",
+      "caddy",
+      "comment",
+      "css",
+      "diff",
+      "dockerfile",
+      "dot",
+      "html",
+      "javascript",
+      "json",
+      "lua",
+      "make",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "regex",
+      "rust",
+      "scss",
+      "sql",
+      "svelte",
+      "toml",
+      "tsx",
+      "typescript",
+      "vimdoc",
+      "yaml",
+    }
 
-        -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-        -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-        -- the name of the parser)
-        -- list of language that will be disabled
-        -- disable = { "c", "rust" },
-        -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-        -- disable = function(lang, buf)
-        --     local max_filesize = 100 * 1024 -- 100 KB
-        --     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        --     if ok and stats and stats.size > max_filesize then
-        --         return true
-        --     end
-        -- end,
+    -- require('nvim-treesitter').install(parsers)
 
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true
-      },
+    -- from https://github.com/nvim-treesitter/nvim-treesitter/issues/8346#issuecomment-3654809051
+    for _, parser in ipairs(parsers) do
+      pcall(treesitter.install, parser)
+    end
 
-      -- TODO: check out incremental selection and text object
-      -- see https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L323
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function(args)
+        local filetype = args.match
+        local language = vim.treesitter.language.get_lang(filetype)
+        if not language then return end
 
+        -- -- to disable slow treesitter highlight for large files
+        -- local max_filesize = 100 * 1024 -- 100 KB
+        -- local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        -- if ok and stats and stats.size > max_filesize then
+        --     return true
+        -- end
+
+        pcall(vim.treesitter.start)
+
+        -- enables treesitter based folds
+        -- for more info on folds see `:help folds`
+        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        -- vim.wo.foldmethod = 'expr'
+
+        -- Treesitter-based indentation is provided by this plugin but considered **experimental**.
+        -- -- check if treesitter indentation is available for this language, and if so enable it
+        -- -- in case there is no indent query, the indentexpr will fallback to the vim's built in one
+        -- local has_indent_query = vim.treesitter.query.get(language, 'indents') ~= nil
+        --
+        -- -- enables treesitter based indentation
+        -- if has_indent_query then vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" end
+
+      end,
     })
+
   end -- config
 }
