@@ -105,5 +105,13 @@ return { -- Autocompletion
 
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true, window = { border = 'single' } },
+
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = {
+        list = { selection = { preselect = false, auto_insert = true } },
+        menu = { auto_show = true }
+      },
+    },
   },
 }
