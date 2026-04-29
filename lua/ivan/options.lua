@@ -106,3 +106,6 @@ vim.schedule(function()
 end)
 
 vim.opt.completeopt = "menu,menuone,noselect"
+
+-- add border to all floating windows, for example for vim.lsp.hover(), mapped to K
+vim.o.winborder = "single"
