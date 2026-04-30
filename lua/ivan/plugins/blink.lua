@@ -107,10 +107,8 @@ return { -- Autocompletion
     signature = { enabled = true, window = { border = 'single' } },
 
     cmdline = {
-      keymap = { preset = 'inherit' },
       completion = {
         list = { selection = { preselect = false, auto_insert = true } },
-        menu = { auto_show = true }
       },
     },
   },
