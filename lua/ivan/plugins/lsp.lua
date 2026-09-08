@@ -23,7 +23,7 @@ return {
       graphql = {},
       html = {},
       lua_ls = {},
-      pyright = {},
+      ruff = {},
       ts_ls = {},
 
       -- rust_analyzer = {
